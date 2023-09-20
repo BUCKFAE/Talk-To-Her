@@ -1,13 +1,17 @@
-import logging
 import tkinter as tk
 from tkinter import scrolledtext
-from queue import Queue
+import subprocess
+
+from chat_handler import ChatHandler
+
+import speech_recognition as sr
+
 
 
 
 class ChatApplication:
 
-    def __init__(self, queue: Queue):
+    def __init__(self):
 
         super().__init__()
         self.root = tk.Tk()
@@ -29,38 +33,63 @@ class ChatApplication:
         send_button = tk.Button(self.root, text="Send", command=self.send_message)
         send_button.pack(pady=20)
 
-        self.queue = queue
+        self.chat_handler = ChatHandler()
+        self.shown_ids: list[int] = []
 
-    def run(self):
-        self.check_queue()
+        self.communicator = subprocess.Popen(['python', 'message_receiver.py'])
+        self.root.protocol("WM_DELETE_WINDOW", self.on_close)
+
+        self.chat_area.after(1000, self.fetch_messages)
         self.root.mainloop()
 
-    def check_queue(self):
-        while not self.queue.empty():
-            message, sender = self.queue.get()
-            print('New stuff')
-            # self.add_message(message, sender)
-        # Check the queue again in 100ms
-        self.root.after(100, self.check_queue)
+    def fetch_messages(self):
+        self.chat_handler.update()
+
+        for message in self.chat_handler.chat:
+            if message.id not in self.shown_ids:
+                self.add_message_to_area(message)
+
+        self.chat_area.after(1000, self.fetch_messages)
+
+    def on_close(self):
+        self.communicator.kill()
+        self.root.destroy()
 
     def send_message(self):
-        message = "Test message"
+        # Initialize recognizer
+        r = sr.Recognizer()
+        with sr.Microphone() as source:
+            print('Speak now!')
+            audio = r.listen(source)
 
-        logging.info(f'Message: {message}')
-        
-        self.chat_area.configure(state='normal')
-        self.chat_area.insert(tk.END, f"DU: {message}\n", 'left')
-        self.chat_area.insert(tk.END, f"SIE: {message}\n", 'right')
-        self.chat_area.configure(state='disabled')
-        self.chat_area.see(tk.END)
+        print(f'Finished listening!')
+        text = r.recognize_google(audio, language='de-DE')
+        print(text)
+
+
+    def add_message_to_area(self, message):
+        print(f'Adding message: {message}')
+        if message.id not in self.shown_ids:
+            self.chat_area.configure(state='normal')
+            if message.sender == 'Oma':
+                self.chat_area.insert(tk.END, f"SIE: {message.message}\n", 'left')
+            elif message.sender == 'Opa':
+                self.chat_area.insert(tk.END, f"DU: {message.message}\n", 'right')
+            else:
+                raise ValueError(f'Unknown sender: {message.sender}')
+            self.chat_area.configure(state='disabled')
+            self.chat_area.see(tk.END)
+
+            self.shown_ids.append(message.id)
+
 
 
 
 
 if __name__ == '__main__':
-    logging.basicConfig(
-        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-        level=logging.INFO
-    )
+    # logging.basicConfig(
+    #     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    #     level=logging.INFO
+    # )
 
     ChatApplication()

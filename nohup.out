@@ -467,3 +467,144 @@ java.lang.Throwable: Process creation:
 	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
 	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1.run(Executors.java:699)
 	at java.base/java.lang.Thread.run(Thread.java:833)
+CompileCommand: exclude com/intellij/openapi/vfs/impl/FilePartNodeRoot.trieDescend bool exclude = true
+2023-09-20 22:48:50,220 [    839]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Visual Studio" not found PluginDescriptor(name=IDEA CORE, id=com.intellij, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/lib, version=231.9011.38, package=com.intellij.structuralsearch, isBundled=true)
+2023-09-20 22:48:50,225 [    844]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Eclipse" not found PluginDescriptor(name=IDEA CORE, id=com.intellij, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/lib, version=231.9011.38, package=com.intellij.structuralsearch, isBundled=true)
+2023-09-20 22:48:50,226 [    845]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "NetBeans 6.5" not found PluginDescriptor(name=IDEA CORE, id=com.intellij, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/lib, version=231.9011.38, package=com.intellij.structuralsearch, isBundled=true)
+2023-09-20 22:48:50,226 [    845]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Visual Studio" not found PluginDescriptor(name=IDEA CORE, id=com.intellij, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/lib, version=231.9011.38, package=com.intellij.structuralsearch, isBundled=true)
+2023-09-20 22:48:50,237 [    856]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "VSCode" not found PluginDescriptor(name=Terminal, id=org.jetbrains.plugins.terminal, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/plugins/terminal, version=231.9011.38, package=null, isBundled=true)
+2023-09-20 22:48:50,248 [    867]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Visual Studio" not found PluginDescriptor(name=HTML Tools, id=HtmlTools, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/plugins/html-tools, version=231.9011.38, package=null, isBundled=true)
+2023-09-20 22:48:50,270 [    889]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Eclipse" not found PluginDescriptor(name=GitHub, id=org.jetbrains.plugins.github, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/plugins/vcs-github, version=231.9011.38, package=org.jetbrains.plugins.github, isBundled=true)
+2023-09-20 22:48:50,277 [    896]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Eclipse" not found PluginDescriptor(name=JavaScript and TypeScript, id=JavaScript, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/plugins/javascript-impl, version=231.9011.38, package=null, isBundled=true)
+2023-09-20 22:48:50,278 [    897]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Visual Studio" not found PluginDescriptor(name=JavaScript and TypeScript, id=JavaScript, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/plugins/javascript-impl, version=231.9011.38, package=null, isBundled=true)
+2023-09-20 22:48:50,281 [    900]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Eclipse" not found PluginDescriptor(name=Space, id=com.jetbrains.space, moduleName=intellij.space.vcs, descriptorPath=intellij.space.vcs.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/plugins/space, version=231.9011.38, package=com.intellij.space.vcs, isBundled=true)
+2023-09-20 22:48:50,318 [    937]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Eclipse" not found PluginDescriptor(name=Python, id=Pythonid, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/plugins/python, version=231.9011.38, package=null, isBundled=true)
+2023-09-20 22:48:50,318 [    937]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "NetBeans 6.5" not found PluginDescriptor(name=Python, id=Pythonid, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/plugins/python, version=231.9011.38, package=null, isBundled=true)
+2023-09-20 22:48:50,319 [    938]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Visual Studio" not found PluginDescriptor(name=Python, id=Pythonid, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/plugins/python, version=231.9011.38, package=null, isBundled=true)
+2023-09-20 22:48:50,320 [    939]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Eclipse" not found PluginDescriptor(name=Python, id=Pythonid, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/plugins/python, version=231.9011.38, package=null, isBundled=true)
+2023-09-20 22:48:50,870 [   1489]   WARN - #c.i.o.v.n.p.l.VfsLog - VFS Log version differs from the implementation version: log null vs implementation -43
+2023-09-20 22:48:51,207 [   1826]   WARN - #c.i.e.t.TargetBasedSdks - SDK target configuration data is absent
+2023-09-20 22:48:51,227 [   1846]   WARN - #c.i.e.t.TargetBasedSdks - SDK target configuration data is absent
+2023-09-20 22:48:51,234 [   1853]   WARN - #c.j.p.PluginClassPathRuntimeCustomizer - There was more than one class loaded in Projector Plugin classloader - this is likely a bug!
+Info  | RdCoroutineScope          | 28:DefaultDispatcher-worker-17 | RdCoroutineHost overridden 
+2023-09-20 22:48:52,558 [   3177]   WARN - #c.i.o.a.i.ActionUpdater - 326 ms to grab EDT for ToolWindowHeader$2#update@ToolwindowTitle (com.intellij.toolWindow.ToolWindowHeader$2)
+2023-09-20 22:48:53,519 [   4138]   WARN - #c.i.i.s.p.i.BundledSharedIndexPostStartupActivity - Skipped 1 pre-built shared indexes: bundled-js-predefined-1d06a55b98c1-e95fd0b84d23-JavaScript-PY-231.9011.38
+2023-09-20 22:48:59,603 [  10222]   WARN - #c.i.u.x.Binding - no accessors for com.intellij.openapi.projectRoots.Sdk
+2023-09-20 22:49:00,050 [  10669]   WARN - #c.j.p.s.s.PySkeletonRefresher - Some skeletons failed to generate
+2023-09-20 22:49:00,050 [  10669]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libc10
+2023-09-20 22:49:00,050 [  10669]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libc10_cuda
+2023-09-20 22:49:00,050 [  10669]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libcaffe2_nvrtc
+2023-09-20 22:49:00,050 [  10669]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libnvfuser_codegen
+2023-09-20 22:49:00,050 [  10669]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libshm
+2023-09-20 22:49:00,051 [  10670]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libtorch
+2023-09-20 22:49:00,051 [  10670]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libtorch_cpu
+2023-09-20 22:49:00,051 [  10670]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libtorch_cuda
+2023-09-20 22:49:00,051 [  10670]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libtorch_cuda_linalg
+2023-09-20 22:49:00,051 [  10670]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libtorch_global_deps
+2023-09-20 22:49:00,051 [  10670]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libtorch_python
+2023-09-20 22:49:11,417 [  22036]   WARN - #c.i.i.s.download - Shared indexes download was cancelled. Indexing has completed faster
+2023-09-20 23:14:26,490 [1537109]   WARN - #c.j.p.d.p.MultiProcessDebugger - Socket closed
+java.net.SocketException: Socket closed
+	at java.base/sun.nio.ch.NioSocketImpl.endAccept(NioSocketImpl.java:689)
+	at java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:762)
+	at java.base/java.net.ServerSocket.implAccept(ServerSocket.java:675)
+	at java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:641)
+	at java.base/java.net.ServerSocket.implAccept(ServerSocket.java:617)
+	at java.base/java.net.ServerSocket.implAccept(ServerSocket.java:574)
+	at java.base/java.net.ServerSocket.accept(ServerSocket.java:532)
+	at com.jetbrains.python.debugger.pydev.transport.ServerModeDebuggerTransport.waitForConnect(ServerModeDebuggerTransport.java:39)
+	at com.jetbrains.python.debugger.pydev.RemoteDebugger.waitForConnect(RemoteDebugger.java:118)
+	at com.jetbrains.python.debugger.pydev.MultiProcessDebugger$DebuggerProcessAcceptor.run(MultiProcessDebugger.java:529)
+	at com.intellij.openapi.application.impl.ApplicationImpl$1.run(ApplicationImpl.java:252)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1$1.run(Executors.java:702)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1$1.run(Executors.java:699)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1.run(Executors.java:699)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-09-20 23:26:28,518 [2259137]   WARN - #c.j.p.d.p.MultiProcessDebugger - Accept timed out
+java.net.SocketTimeoutException: Accept timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedAccept(NioSocketImpl.java:708)
+	at java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:752)
+	at java.base/java.net.ServerSocket.implAccept(ServerSocket.java:675)
+	at java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:641)
+	at java.base/java.net.ServerSocket.implAccept(ServerSocket.java:617)
+	at java.base/java.net.ServerSocket.implAccept(ServerSocket.java:574)
+	at java.base/java.net.ServerSocket.accept(ServerSocket.java:532)
+	at com.jetbrains.python.debugger.pydev.transport.ServerModeDebuggerTransport.waitForConnect(ServerModeDebuggerTransport.java:39)
+	at com.jetbrains.python.debugger.pydev.RemoteDebugger.waitForConnect(RemoteDebugger.java:118)
+	at com.jetbrains.python.debugger.pydev.MultiProcessDebugger$DebuggerProcessAcceptor.run(MultiProcessDebugger.java:529)
+	at com.intellij.openapi.application.impl.ApplicationImpl$1.run(ApplicationImpl.java:252)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1$1.run(Executors.java:702)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1$1.run(Executors.java:699)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1.run(Executors.java:699)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+CompileCommand: exclude com/intellij/openapi/vfs/impl/FilePartNodeRoot.trieDescend bool exclude = true
+2023-09-20 23:39:57,494 [    852]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Visual Studio" not found PluginDescriptor(name=IDEA CORE, id=com.intellij, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/lib, version=231.9011.38, package=com.intellij.structuralsearch, isBundled=true)
+2023-09-20 23:39:57,498 [    856]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Eclipse" not found PluginDescriptor(name=IDEA CORE, id=com.intellij, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/lib, version=231.9011.38, package=com.intellij.structuralsearch, isBundled=true)
+2023-09-20 23:39:57,499 [    857]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "NetBeans 6.5" not found PluginDescriptor(name=IDEA CORE, id=com.intellij, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/lib, version=231.9011.38, package=com.intellij.structuralsearch, isBundled=true)
+2023-09-20 23:39:57,499 [    857]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Visual Studio" not found PluginDescriptor(name=IDEA CORE, id=com.intellij, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/lib, version=231.9011.38, package=com.intellij.structuralsearch, isBundled=true)
+2023-09-20 23:39:57,507 [    865]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "VSCode" not found PluginDescriptor(name=Terminal, id=org.jetbrains.plugins.terminal, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/plugins/terminal, version=231.9011.38, package=null, isBundled=true)
+2023-09-20 23:39:57,517 [    875]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Visual Studio" not found PluginDescriptor(name=HTML Tools, id=HtmlTools, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/plugins/html-tools, version=231.9011.38, package=null, isBundled=true)
+2023-09-20 23:39:57,536 [    894]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Eclipse" not found PluginDescriptor(name=GitHub, id=org.jetbrains.plugins.github, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/plugins/vcs-github, version=231.9011.38, package=org.jetbrains.plugins.github, isBundled=true)
+2023-09-20 23:39:57,542 [    900]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Eclipse" not found PluginDescriptor(name=JavaScript and TypeScript, id=JavaScript, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/plugins/javascript-impl, version=231.9011.38, package=null, isBundled=true)
+2023-09-20 23:39:57,542 [    900]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Visual Studio" not found PluginDescriptor(name=JavaScript and TypeScript, id=JavaScript, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/plugins/javascript-impl, version=231.9011.38, package=null, isBundled=true)
+2023-09-20 23:39:57,545 [    903]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Eclipse" not found PluginDescriptor(name=Space, id=com.jetbrains.space, moduleName=intellij.space.vcs, descriptorPath=intellij.space.vcs.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/plugins/space, version=231.9011.38, package=com.intellij.space.vcs, isBundled=true)
+2023-09-20 23:39:57,571 [    929]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Eclipse" not found PluginDescriptor(name=Python, id=Pythonid, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/plugins/python, version=231.9011.38, package=null, isBundled=true)
+2023-09-20 23:39:57,572 [    930]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "NetBeans 6.5" not found PluginDescriptor(name=Python, id=Pythonid, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/plugins/python, version=231.9011.38, package=null, isBundled=true)
+2023-09-20 23:39:57,573 [    931]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Visual Studio" not found PluginDescriptor(name=Python, id=Pythonid, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/plugins/python, version=231.9011.38, package=null, isBundled=true)
+2023-09-20 23:39:57,574 [    932]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Eclipse" not found PluginDescriptor(name=Python, id=Pythonid, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/plugins/python, version=231.9011.38, package=null, isBundled=true)
+2023-09-20 23:39:58,199 [   1557]   WARN - #c.i.o.v.n.p.l.VfsLog - VFS Log version differs from the implementation version: log null vs implementation -43
+2023-09-20 23:39:58,503 [   1861]   WARN - #c.i.e.t.TargetBasedSdks - SDK target configuration data is absent
+2023-09-20 23:39:58,523 [   1881]   WARN - #c.i.e.t.TargetBasedSdks - SDK target configuration data is absent
+2023-09-20 23:39:58,528 [   1886]   WARN - #c.j.p.PluginClassPathRuntimeCustomizer - There was more than one class loaded in Projector Plugin classloader - this is likely a bug!
+Info  | RdCoroutineScope          | 52:DefaultDispatcher-worker-35 | RdCoroutineHost overridden 
+2023-09-20 23:40:00,776 [   4134]   WARN - #c.i.i.s.p.i.BundledSharedIndexPostStartupActivity - Skipped 1 pre-built shared indexes: bundled-js-predefined-1d06a55b98c1-e95fd0b84d23-JavaScript-PY-231.9011.38
+2023-09-20 23:40:02,725 [   6083]   WARN - #c.i.u.x.Binding - no accessors for com.intellij.openapi.projectRoots.Sdk
+2023-09-20 23:40:07,312 [  10670]   WARN - #c.j.p.s.s.PySkeletonRefresher - Some skeletons failed to generate
+2023-09-20 23:40:07,313 [  10671]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libc10
+2023-09-20 23:40:07,313 [  10671]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libc10_cuda
+2023-09-20 23:40:07,313 [  10671]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libcaffe2_nvrtc
+2023-09-20 23:40:07,313 [  10671]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libnvfuser_codegen
+2023-09-20 23:40:07,313 [  10671]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libshm
+2023-09-20 23:40:07,313 [  10671]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libtorch
+2023-09-20 23:40:07,313 [  10671]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libtorch_cpu
+2023-09-20 23:40:07,313 [  10671]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libtorch_cuda
+2023-09-20 23:40:07,313 [  10671]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libtorch_cuda_linalg
+2023-09-20 23:40:07,313 [  10671]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libtorch_global_deps
+2023-09-20 23:40:07,313 [  10671]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libtorch_python
+2023-09-20 23:40:19,461 [  22819]   WARN - #c.i.i.s.download - Shared indexes download was cancelled. Indexing has completed faster
+2023-09-20 23:45:30,791 [ 334149]   WARN - #c.i.e.p.BaseOSProcessHandler - Process hasn't generated any output for a long time.
+If it's a long-running mostly idle daemon process, consider overriding OSProcessHandler#readerOptions with 'BaseOutputReader.Options.forMostlySilentProcess()' to reduce CPU usage.
+Command line: /home/buckfae/Documents/Talk-To-Her/venv/bin/python /home/buckfae/Documents/Talk-To-Her/chat_application.py 
+java.lang.Throwable: Process creation:
+	at com.intellij.execution.process.BaseOSProcessHandler.<init>(BaseOSProcessHandler.java:32)
+	at com.intellij.execution.process.OSProcessHandler.<init>(OSProcessHandler.java:76)
+	at com.intellij.execution.process.KillableProcessHandler.<init>(KillableProcessHandler.java:77)
+	at com.intellij.execution.process.ColoredProcessHandler.<init>(ColoredProcessHandler.java:51)
+	at com.intellij.execution.process.KillableColoredProcessHandler.<init>(KillableColoredProcessHandler.java:60)
+	at com.intellij.execution.process.KillableColoredProcessHandler.<init>(KillableColoredProcessHandler.java:50)
+	at com.jetbrains.python.run.PythonProcessHandler.<init>(PythonProcessHandler.java:23)
+	at com.jetbrains.python.run.PythonCommandLineState.createProcessHandler(PythonCommandLineState.java:487)
+	at com.jetbrains.python.run.PythonScriptCommandLineState.createProcessHandler(PythonScriptCommandLineState.java:267)
+	at com.jetbrains.python.run.PythonCommandLineState.doStartProcess(PythonCommandLineState.java:419)
+	at com.jetbrains.python.run.PythonCommandLineState.startProcess(PythonCommandLineState.java:347)
+	at com.jetbrains.python.run.PythonCommandLineState.execute(PythonCommandLineState.java:233)
+	at com.jetbrains.python.run.PythonScriptCommandLineState.execute(PythonScriptCommandLineState.java:147)
+	at com.jetbrains.python.run.PythonCommandLineState.execute(PythonCommandLineState.java:179)
+	at com.jetbrains.python.run.PythonRunner.lambda$execute$2(PythonRunner.java:67)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1$1.run(Executors.java:702)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1$1.run(Executors.java:699)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1.run(Executors.java:699)
+	at java.base/java.lang.Thread.run(Thread.java:833)
