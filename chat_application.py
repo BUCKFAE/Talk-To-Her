@@ -1,18 +1,23 @@
+import logging
 import tkinter as tk
 from tkinter import scrolledtext
+from queue import Queue
+
+
 
 class ChatApplication:
 
-    def __init__(self):
+    def __init__(self, queue: Queue):
 
-        root = tk.Tk()
-        root.title("Rede mit ihr")
-        root.geometry("400x500")
+        super().__init__()
+        self.root = tk.Tk()
+        self.root.title("Rede mit ihr")
+        self.root.geometry("400x500")
 
         self.font = ("TkDefaultFont", 20)
 
         # Setup chat window
-        self.chat_area = scrolledtext.ScrolledText(root, wrap=tk.WORD)
+        self.chat_area = scrolledtext.ScrolledText(self.root, wrap=tk.WORD)
         self.chat_area.pack(pady=20, padx=20)
         self.chat_area.configure(state='disabled') 
 
@@ -21,18 +26,27 @@ class ChatApplication:
         self.chat_area.tag_configure('right', justify='right', background='lightgreen', rmargin=10, font=self.font)
 
         # Send button
-        send_button = tk.Button(root, text="Send", command=self.add_message)
+        send_button = tk.Button(self.root, text="Send", command=self.send_message)
         send_button.pack(pady=20)
 
-        # Checking for new messages
-        self.chat_area.after(5000, self.update_on_new_message)
+        self.queue = queue
 
-        root.mainloop()
+    def run(self):
+        self.check_queue()
+        self.root.mainloop()
 
-    def add_message(self):
+    def check_queue(self):
+        while not self.queue.empty():
+            message, sender = self.queue.get()
+            print('New stuff')
+            # self.add_message(message, sender)
+        # Check the queue again in 100ms
+        self.root.after(100, self.check_queue)
+
+    def send_message(self):
         message = "Test message"
 
-        print(f'Message: {message}')
+        logging.info(f'Message: {message}')
         
         self.chat_area.configure(state='normal')
         self.chat_area.insert(tk.END, f"DU: {message}\n", 'left')
@@ -40,11 +54,13 @@ class ChatApplication:
         self.chat_area.configure(state='disabled')
         self.chat_area.see(tk.END)
 
-    def update_on_new_message(self):
-        print(f'Checking for a new message')
-        return 
 
 
 
 if __name__ == '__main__':
+    logging.basicConfig(
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+        level=logging.INFO
+    )
+
     ChatApplication()
