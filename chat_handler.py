@@ -12,8 +12,8 @@ class ChatHandler:
 
     CHAT_FILE: str = 'chat_history.json'
 
-    def __init__(self):
-
+    def __init__(self,queue=None):
+        self.queue = queue
         if os.path.isfile(self.CHAT_FILE):
             logging.info(f'Loading existing chat from file: {self.CHAT_FILE}')
             self.update()
@@ -22,7 +22,10 @@ class ChatHandler:
             self.chat: list[Message] = []
 
     def add_message(self, message_id: int, sender: str, message: str):
-        self.chat += [Message(message_id, sender, message)]
+        msg = Message(message_id, sender, message)
+        self.chat += [msg]
+        if self.queue:
+            self.queue.put(msg)
         with open(self.CHAT_FILE, 'w') as f:
             json.dump([m._asdict() for m in self.chat], f)
         self.update()

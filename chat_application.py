@@ -11,9 +11,11 @@ import speech_recognition as sr
 
 class ChatApplication:
 
-    def __init__(self):
+    def __init__(self, send_queue, recieve_queue):
 
         super().__init__()
+        self.send_queue = send_queue
+        self.recieve_queue = recieve_queue
         self.root = tk.Tk()
         self.root.title("Rede mit ihr")
         self.root.geometry("400x500")
@@ -36,11 +38,14 @@ class ChatApplication:
         self.chat_handler = ChatHandler()
         self.shown_ids: list[int] = []
 
-        self.communicator = subprocess.Popen(['python', 'message_receiver.py'])
+        #self.communicator = subprocess.Popen(['python', 'message_receiver.py'])
         self.root.protocol("WM_DELETE_WINDOW", self.on_close)
 
         self.chat_area.after(1000, self.fetch_messages)
+
+    def init(self):
         self.root.mainloop()
+        
 
     def fetch_messages(self):
         self.chat_handler.update()
@@ -52,7 +57,7 @@ class ChatApplication:
         self.chat_area.after(1000, self.fetch_messages)
 
     def on_close(self):
-        self.communicator.kill()
+        #self.communicator.kill()
         self.root.destroy()
 
     def send_message(self):
@@ -65,6 +70,7 @@ class ChatApplication:
         print(f'Finished listening!')
         text = r.recognize_google(audio, language='de-DE')
         print(text)
+        self.send_queue.put(text)
 
 
     def add_message_to_area(self, message):
