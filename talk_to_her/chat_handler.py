@@ -31,6 +31,10 @@ class ChatHandler:
         self.update()
 
     def update(self):
+
+        if not os.path.isfile(self.CHAT_FILE):
+            return
+
         with open(self.CHAT_FILE, 'r') as f:
             messages = json.load(f)
             self.chat = [Message(message['id'], message['sender'], message['message']) for message in messages]

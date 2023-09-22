@@ -1,14 +1,9 @@
-import os
 import time
-from telegram_communicator import TelegramCommunicator
-from chat_application import ChatApplication
-from multiprocessing import Process, Queue 
+from multiprocessing import Process, Queue
 
-class TargetProcess(Process):
+from talk_to_her.chat_application import ChatApplication
+from talk_to_her.telegram_communicator import TelegramCommunicator
 
-    def __init__(self, group=None, target=None, name=None, args=(), kwargs={}, *, daemon=None):
-        super().__init__()
-        self.target = target
 
 def call_init(target):
     target.init()
@@ -23,7 +18,7 @@ if __name__ == '__main__':
     telegramProcess.start()
     applicationProcess.start()
 
-    while(applicationProcess.is_alive() or telegramProcess.is_alive()):
+    while applicationProcess.is_alive() or telegramProcess.is_alive():
         if not message_recieve_queue.empty():
             msg = message_recieve_queue.get_nowait()
             print(f"received: {msg}")
@@ -41,4 +36,3 @@ if __name__ == '__main__':
         if not telegramProcess.is_alive():
             print("telegram ded")
             
-    #os.system('python message_receiver.py')

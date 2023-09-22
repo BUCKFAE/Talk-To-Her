@@ -1,12 +1,10 @@
 import tkinter as tk
 from tkinter import scrolledtext
-import subprocess
 
-from chat_handler import ChatHandler
 
 import speech_recognition as sr
 
-
+from talk_to_her.chat_handler import ChatHandler
 
 
 class ChatApplication:
@@ -62,13 +60,14 @@ class ChatApplication:
 
     def send_message(self):
         # Initialize recognizer
-        r = sr.Recognizer()
-        with sr.Microphone() as source:
-            print('Speak now!')
-            audio = r.listen(source)
-
-        print(f'Finished listening!')
-        text = r.recognize_google(audio, language='de-DE')
+        # r = sr.Recognizer()
+        # with sr.Microphone() as source:
+        #     print('Speak now!')
+        #     audio = r.listen(source)
+        #
+        # print(f'Finished listening!')
+        # text = r.recognize_google(audio, language='de-DE')
+        text = "Hallo, Oma"
         print(text)
         self.send_queue.put(text)
 

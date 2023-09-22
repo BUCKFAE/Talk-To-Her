@@ -1,46 +1,48 @@
-import asyncio
 import os
-import threading
+import sys
 
 from dotenv import load_dotenv
 from telegram import Update
-from telegram.ext import ApplicationBuilder, ContextTypes, MessageHandler, filters, JobQueue
+from telegram.ext import ApplicationBuilder, ContextTypes, MessageHandler, filters
 
-from chat_handler import ChatHandler
+from talk_to_her.chat_handler import ChatHandler
 
 
 class TelegramCommunicator:
     """Handles the communication with telegram"""
 
-    def __init__(self, recieve_queue, send_queue):
+    def __init__(self, receive_queue, send_queue):
         super().__init__()
-        self.recieve_queue = recieve_queue
+        self.receive_queue = receive_queue
         self.send_queue = send_queue
+
         load_dotenv()
         token = os.environ['TELEGRAM_TOKEN']
 
         self.application = ApplicationBuilder().token(token).build()
         echo_handler = MessageHandler(filters.TEXT & (~filters.COMMAND), self.handle_incoming_message)
         self.application.add_handler(echo_handler)
-        self.chat_handler = ChatHandler(recieve_queue)
-        try:
-            self.chat_id = os.environ['CHAT_ID']
-        except KeyError:
-            self.chat_id = 0
+
+        self.chat_handler = ChatHandler(receive_queue)
+
+        # Bot only listens to this one chat
+        self.chat_id = os.environ.get('CHAT_ID')
+        assert self.chat_id is not None, f'Did not find env var CHAT_ID. '
 
     def init(self):
         self.job_minute = self.application.job_queue.run_repeating(self.check_for_message, interval=1, first=1)
         self.application.run_polling()
         print("Im (not) running")
 
-    async def check_for_message(self, context: ContextTypes.DEFAULT_TYPE):
-        #print(context)
-        #print(dir(context))
+    async def check_for_message(self, _: ContextTypes.DEFAULT_TYPE):
+
+        # If we got a new message that has not been handled yet
         if not self.send_queue.empty():
             msg = self.send_queue.get_nowait()
+
+            # Stop process
             if msg == "||killmenow||DOIT||JUSTDOITNOW||":
-                self.job_minute.schedule_removal()
-                raise SystemExit
+                sys.exit(0)
             else:
                 self.send_message(msg)
 
