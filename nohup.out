@@ -781,3 +781,221 @@ java.net.SocketException: Socket closed
 2023-09-22 16:44:23,595 [1606846]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libtorch_cuda_linalg
 2023-09-22 16:44:23,595 [1606846]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libtorch_global_deps
 2023-09-22 16:44:23,595 [1606846]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libtorch_python
+CompileCommand: exclude com/intellij/openapi/vfs/impl/FilePartNodeRoot.trieDescend bool exclude = true
+2023-09-22 16:52:14,731 [    587]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Visual Studio" not found PluginDescriptor(name=IDEA CORE, id=com.intellij, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/lib, version=231.9011.38, package=com.intellij.structuralsearch, isBundled=true)
+2023-09-22 16:52:14,737 [    593]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Eclipse" not found PluginDescriptor(name=IDEA CORE, id=com.intellij, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/lib, version=231.9011.38, package=com.intellij.structuralsearch, isBundled=true)
+2023-09-22 16:52:14,738 [    594]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "NetBeans 6.5" not found PluginDescriptor(name=IDEA CORE, id=com.intellij, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/lib, version=231.9011.38, package=com.intellij.structuralsearch, isBundled=true)
+2023-09-22 16:52:14,738 [    594]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Visual Studio" not found PluginDescriptor(name=IDEA CORE, id=com.intellij, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/lib, version=231.9011.38, package=com.intellij.structuralsearch, isBundled=true)
+2023-09-22 16:52:14,748 [    604]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "VSCode" not found PluginDescriptor(name=Terminal, id=org.jetbrains.plugins.terminal, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/plugins/terminal, version=231.9011.38, package=null, isBundled=true)
+2023-09-22 16:52:14,759 [    615]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Visual Studio" not found PluginDescriptor(name=HTML Tools, id=HtmlTools, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/plugins/html-tools, version=231.9011.38, package=null, isBundled=true)
+2023-09-22 16:52:14,778 [    634]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Eclipse" not found PluginDescriptor(name=GitHub, id=org.jetbrains.plugins.github, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/plugins/vcs-github, version=231.9011.38, package=org.jetbrains.plugins.github, isBundled=true)
+2023-09-22 16:52:14,786 [    642]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Eclipse" not found PluginDescriptor(name=JavaScript and TypeScript, id=JavaScript, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/plugins/javascript-impl, version=231.9011.38, package=null, isBundled=true)
+2023-09-22 16:52:14,786 [    642]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Visual Studio" not found PluginDescriptor(name=JavaScript and TypeScript, id=JavaScript, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/plugins/javascript-impl, version=231.9011.38, package=null, isBundled=true)
+2023-09-22 16:52:14,790 [    646]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Eclipse" not found PluginDescriptor(name=Space, id=com.jetbrains.space, moduleName=intellij.space.vcs, descriptorPath=intellij.space.vcs.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/plugins/space, version=231.9011.38, package=com.intellij.space.vcs, isBundled=true)
+2023-09-22 16:52:14,830 [    686]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Eclipse" not found PluginDescriptor(name=Python, id=Pythonid, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/plugins/python, version=231.9011.38, package=null, isBundled=true)
+2023-09-22 16:52:14,831 [    687]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "NetBeans 6.5" not found PluginDescriptor(name=Python, id=Pythonid, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/plugins/python, version=231.9011.38, package=null, isBundled=true)
+2023-09-22 16:52:14,832 [    688]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Visual Studio" not found PluginDescriptor(name=Python, id=Pythonid, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/plugins/python, version=231.9011.38, package=null, isBundled=true)
+2023-09-22 16:52:14,833 [    689]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Eclipse" not found PluginDescriptor(name=Python, id=Pythonid, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/plugins/python, version=231.9011.38, package=null, isBundled=true)
+2023-09-22 16:52:15,581 [   1437]   WARN - #c.i.o.v.n.p.l.VfsLog - VFS Log version differs from the implementation version: log null vs implementation -43
+2023-09-22 16:52:15,964 [   1820]   WARN - #c.i.e.t.TargetBasedSdks - SDK target configuration data is absent
+2023-09-22 16:52:15,995 [   1851]   WARN - #c.i.e.t.TargetBasedSdks - SDK target configuration data is absent
+2023-09-22 16:52:16,011 [   1867]   WARN - #c.j.p.PluginClassPathRuntimeCustomizer - There was more than one class loaded in Projector Plugin classloader - this is likely a bug!
+Info  | RdCoroutineScope          | 42:DefaultDispatcher-worker-28 | RdCoroutineHost overridden 
+2023-09-22 16:52:17,560 [   3416]   WARN - #c.i.o.a.i.ActionUpdater - 513 ms to grab EDT for ToolWindowHeader$2#update@ToolwindowTitle (com.intellij.toolWindow.ToolWindowHeader$2)
+2023-09-22 16:52:19,623 [   5479]   WARN - #c.i.i.s.p.i.BundledSharedIndexPostStartupActivity - Skipped 1 pre-built shared indexes: bundled-js-predefined-1d06a55b98c1-e95fd0b84d23-JavaScript-PY-231.9011.38
+2023-09-22 16:52:24,443 [  10299]   WARN - #c.i.u.x.Binding - no accessors for com.intellij.openapi.projectRoots.Sdk
+2023-09-22 16:52:26,463 [  12319]   WARN - #c.j.p.s.s.PySkeletonRefresher - Some skeletons failed to generate
+2023-09-22 16:52:26,464 [  12320]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libc10
+2023-09-22 16:52:26,464 [  12320]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libc10_cuda
+2023-09-22 16:52:26,464 [  12320]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libcaffe2_nvrtc
+2023-09-22 16:52:26,464 [  12320]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libnvfuser_codegen
+2023-09-22 16:52:26,464 [  12320]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libshm
+2023-09-22 16:52:26,464 [  12320]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libtorch
+2023-09-22 16:52:26,464 [  12320]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libtorch_cpu
+2023-09-22 16:52:26,464 [  12320]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libtorch_cuda
+2023-09-22 16:52:26,464 [  12320]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libtorch_cuda_linalg
+2023-09-22 16:52:26,464 [  12320]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libtorch_global_deps
+2023-09-22 16:52:26,464 [  12320]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libtorch_python
+2023-09-22 16:52:50,818 [  36674] SEVERE - #c.i.u.i.PersistentEnumeratorBase - Index 1901 out of bounds for length 1
+java.lang.IndexOutOfBoundsException: Index 1901 out of bounds for length 1
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:266)
+	at java.base/java.util.Objects.checkIndex(Objects.java:361)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at com.intellij.vcs.log.data.index.VcsLogPathsIndex$LightFilePathKeyDescriptor.read(VcsLogPathsIndex.java:366)
+	at com.intellij.vcs.log.data.index.VcsLogPathsIndex$LightFilePathKeyDescriptor.read(VcsLogPathsIndex.java:334)
+	at com.intellij.util.io.keyStorage.AppendableStorageBackedByResizableMappedFile.read(AppendableStorageBackedByResizableMappedFile.java:97)
+	at com.intellij.util.io.PersistentEnumeratorBase.findValueFor(PersistentEnumeratorBase.java:438)
+	at com.intellij.util.io.PersistentEnumeratorBase.lambda$valueOf$2(PersistentEnumeratorBase.java:427)
+	at com.intellij.util.io.PersistentEnumeratorBase.catchCorruption(PersistentEnumeratorBase.java:621)
+	at com.intellij.util.io.PersistentEnumeratorBase.valueOf(PersistentEnumeratorBase.java:426)
+	at com.intellij.util.io.PersistentBTreeEnumerator.valueOf(PersistentBTreeEnumerator.java:733)
+	at com.intellij.util.io.PersistentEnumeratorBase.isKeyAtIndex(PersistentEnumeratorBase.java:366)
+	at com.intellij.util.io.PersistentBTreeEnumerator.enumerateImpl(PersistentBTreeEnumerator.java:556)
+	at com.intellij.util.io.PersistentEnumeratorBase.lambda$doEnumerate$0(PersistentEnumeratorBase.java:260)
+	at com.intellij.util.io.PersistentEnumeratorBase.catchCorruption(PersistentEnumeratorBase.java:621)
+	at com.intellij.util.io.PersistentEnumeratorBase.doEnumerate(PersistentEnumeratorBase.java:259)
+	at com.intellij.util.io.PersistentEnumeratorBase.enumerate(PersistentEnumeratorBase.java:272)
+	at com.intellij.util.io.PersistentEnumerator.enumerate(PersistentEnumerator.java:125)
+	at com.intellij.vcs.log.data.index.VcsLogPathsIndex$1.encode(VcsLogPathsIndex.java:129)
+	at git4idea.history.CompressedRecordBuilder.addPath(GitCompressedDetailsCollector.kt:35)
+	at git4idea.history.GitLogParser$PathsParser.addPath(GitLogParser.java:421)
+	at git4idea.history.GitLogParser$PathsParser.parseLine(GitLogParser.java:409)
+	at git4idea.history.GitLogParser.parseLineWithPaths(GitLogParser.java:164)
+	at git4idea.history.GitLogParser.parseLine(GitLogParser.java:147)
+	at git4idea.history.GitLogOutputSplitter.processOutputLine(GitLogOutputSplitter.java:80)
+	at git4idea.history.GitLogOutputSplitter.onLineAvailable(GitLogOutputSplitter.java:64)
+	at jdk.internal.reflect.GeneratedMethodAccessor100.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.intellij.util.EventDispatcher.dispatchVoidMethod(EventDispatcher.java:120)
+	at com.intellij.util.EventDispatcher.lambda$createMulticaster$1(EventDispatcher.java:85)
+	at jdk.proxy4/jdk.proxy4.$Proxy123.onLineAvailable(Unknown Source)
+	at git4idea.commands.GitLineHandler.onLineAvailable(GitLineHandler.java:142)
+	at git4idea.commands.GitLineHandler$1.lambda$createOutputDataReader$0(GitLineHandler.java:162)
+	at git4idea.commands.BufferingTextSplitter.process(BufferingTextSplitter.java:51)
+	at git4idea.commands.GitLineHandler$LineReader.read(GitLineHandler.java:225)
+	at git4idea.commands.GitLineHandler$LineReader.readAvailableBlocking(GitLineHandler.java:214)
+	at com.intellij.util.io.BaseDataReader.readAvailable(BaseDataReader.java:72)
+	at com.intellij.util.io.BaseDataReader.doRun(BaseDataReader.java:153)
+	at com.intellij.util.ConcurrencyUtil.runUnderThreadName(ConcurrencyUtil.java:227)
+	at com.intellij.util.io.BaseDataReader.lambda$start$0(BaseDataReader.java:48)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1$1.run(Executors.java:702)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1$1.run(Executors.java:699)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1.run(Executors.java:699)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-09-22 16:52:50,820 [  36676] SEVERE - #c.i.u.i.PersistentEnumeratorBase - PyCharm 2023.1.2  Build #PY-231.9011.38
+2023-09-22 16:52:50,820 [  36676] SEVERE - #c.i.u.i.PersistentEnumeratorBase - JDK: 17.0.7; VM: OpenJDK 64-Bit Server VM; Vendor: JetBrains s.r.o.
+2023-09-22 16:52:50,820 [  36676] SEVERE - #c.i.u.i.PersistentEnumeratorBase - OS: Linux
+2023-09-22 16:52:50,823 [  36679] SEVERE - #c.i.u.i.PersistentEnumeratorBase - java.lang.IndexOutOfBoundsException: Index 1901 out of bounds for length 1
+java.lang.RuntimeException: java.lang.IndexOutOfBoundsException: Index 1901 out of bounds for length 1
+	at com.intellij.util.io.PersistentEnumeratorBase.catchCorruption(PersistentEnumeratorBase.java:646)
+	at com.intellij.util.io.PersistentEnumeratorBase.valueOf(PersistentEnumeratorBase.java:426)
+	at com.intellij.util.io.PersistentBTreeEnumerator.valueOf(PersistentBTreeEnumerator.java:733)
+	at com.intellij.util.io.PersistentEnumeratorBase.isKeyAtIndex(PersistentEnumeratorBase.java:366)
+	at com.intellij.util.io.PersistentBTreeEnumerator.enumerateImpl(PersistentBTreeEnumerator.java:556)
+	at com.intellij.util.io.PersistentEnumeratorBase.lambda$doEnumerate$0(PersistentEnumeratorBase.java:260)
+	at com.intellij.util.io.PersistentEnumeratorBase.catchCorruption(PersistentEnumeratorBase.java:621)
+	at com.intellij.util.io.PersistentEnumeratorBase.doEnumerate(PersistentEnumeratorBase.java:259)
+	at com.intellij.util.io.PersistentEnumeratorBase.enumerate(PersistentEnumeratorBase.java:272)
+	at com.intellij.util.io.PersistentEnumerator.enumerate(PersistentEnumerator.java:125)
+	at com.intellij.vcs.log.data.index.VcsLogPathsIndex$1.encode(VcsLogPathsIndex.java:129)
+	at git4idea.history.CompressedRecordBuilder.addPath(GitCompressedDetailsCollector.kt:35)
+	at git4idea.history.GitLogParser$PathsParser.addPath(GitLogParser.java:421)
+	at git4idea.history.GitLogParser$PathsParser.parseLine(GitLogParser.java:409)
+	at git4idea.history.GitLogParser.parseLineWithPaths(GitLogParser.java:164)
+	at git4idea.history.GitLogParser.parseLine(GitLogParser.java:147)
+	at git4idea.history.GitLogOutputSplitter.processOutputLine(GitLogOutputSplitter.java:80)
+	at git4idea.history.GitLogOutputSplitter.onLineAvailable(GitLogOutputSplitter.java:64)
+	at jdk.internal.reflect.GeneratedMethodAccessor100.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.intellij.util.EventDispatcher.dispatchVoidMethod(EventDispatcher.java:120)
+	at com.intellij.util.EventDispatcher.lambda$createMulticaster$1(EventDispatcher.java:85)
+	at jdk.proxy4/jdk.proxy4.$Proxy123.onLineAvailable(Unknown Source)
+	at git4idea.commands.GitLineHandler.onLineAvailable(GitLineHandler.java:142)
+	at git4idea.commands.GitLineHandler$1.lambda$createOutputDataReader$0(GitLineHandler.java:162)
+	at git4idea.commands.BufferingTextSplitter.process(BufferingTextSplitter.java:51)
+	at git4idea.commands.GitLineHandler$LineReader.read(GitLineHandler.java:225)
+	at git4idea.commands.GitLineHandler$LineReader.readAvailableBlocking(GitLineHandler.java:214)
+	at com.intellij.util.io.BaseDataReader.readAvailable(BaseDataReader.java:72)
+	at com.intellij.util.io.BaseDataReader.doRun(BaseDataReader.java:153)
+	at com.intellij.util.ConcurrencyUtil.runUnderThreadName(ConcurrencyUtil.java:227)
+	at com.intellij.util.io.BaseDataReader.lambda$start$0(BaseDataReader.java:48)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1$1.run(Executors.java:702)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1$1.run(Executors.java:699)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1.run(Executors.java:699)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.IndexOutOfBoundsException: Index 1901 out of bounds for length 1
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:266)
+	at java.base/java.util.Objects.checkIndex(Objects.java:361)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at com.intellij.vcs.log.data.index.VcsLogPathsIndex$LightFilePathKeyDescriptor.read(VcsLogPathsIndex.java:366)
+	at com.intellij.vcs.log.data.index.VcsLogPathsIndex$LightFilePathKeyDescriptor.read(VcsLogPathsIndex.java:334)
+	at com.intellij.util.io.keyStorage.AppendableStorageBackedByResizableMappedFile.read(AppendableStorageBackedByResizableMappedFile.java:97)
+	at com.intellij.util.io.PersistentEnumeratorBase.findValueFor(PersistentEnumeratorBase.java:438)
+	at com.intellij.util.io.PersistentEnumeratorBase.lambda$valueOf$2(PersistentEnumeratorBase.java:427)
+	at com.intellij.util.io.PersistentEnumeratorBase.catchCorruption(PersistentEnumeratorBase.java:621)
+	... 41 more
+2023-09-22 16:52:50,824 [  36680] SEVERE - #c.i.u.i.PersistentEnumeratorBase - PyCharm 2023.1.2  Build #PY-231.9011.38
+2023-09-22 16:52:50,824 [  36680] SEVERE - #c.i.u.i.PersistentEnumeratorBase - JDK: 17.0.7; VM: OpenJDK 64-Bit Server VM; Vendor: JetBrains s.r.o.
+2023-09-22 16:52:50,824 [  36680] SEVERE - #c.i.u.i.PersistentEnumeratorBase - OS: Linux
+2023-09-22 16:52:50,832 [  36688] SEVERE - #c.i.v.l.d.i.VcsLogPersistentIndex - Error while indexing Talk-To-Her
+com.intellij.openapi.vcs.VcsException: java.lang.RuntimeException: java.lang.IndexOutOfBoundsException: Index 1901 out of bounds for length 1
+	at git4idea.history.GitLogOutputSplitter.onLineAvailable(GitLogOutputSplitter.java:73)
+	at jdk.internal.reflect.GeneratedMethodAccessor100.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.intellij.util.EventDispatcher.dispatchVoidMethod(EventDispatcher.java:120)
+	at com.intellij.util.EventDispatcher.lambda$createMulticaster$1(EventDispatcher.java:85)
+	at jdk.proxy4/jdk.proxy4.$Proxy123.onLineAvailable(Unknown Source)
+	at git4idea.commands.GitLineHandler.onLineAvailable(GitLineHandler.java:142)
+	at git4idea.commands.GitLineHandler$1.lambda$createOutputDataReader$0(GitLineHandler.java:162)
+	at git4idea.commands.BufferingTextSplitter.process(BufferingTextSplitter.java:51)
+	at git4idea.commands.GitLineHandler$LineReader.read(GitLineHandler.java:225)
+	at git4idea.commands.GitLineHandler$LineReader.readAvailableBlocking(GitLineHandler.java:214)
+	at com.intellij.util.io.BaseDataReader.readAvailable(BaseDataReader.java:72)
+	at com.intellij.util.io.BaseDataReader.doRun(BaseDataReader.java:153)
+	at com.intellij.util.ConcurrencyUtil.runUnderThreadName(ConcurrencyUtil.java:227)
+	at com.intellij.util.io.BaseDataReader.lambda$start$0(BaseDataReader.java:48)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1$1.run(Executors.java:702)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1$1.run(Executors.java:699)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1.run(Executors.java:699)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.RuntimeException: java.lang.RuntimeException: java.lang.IndexOutOfBoundsException: Index 1901 out of bounds for length 1
+	at com.intellij.util.io.PersistentEnumeratorBase.catchCorruption(PersistentEnumeratorBase.java:646)
+	at com.intellij.util.io.PersistentEnumeratorBase.doEnumerate(PersistentEnumeratorBase.java:259)
+	at com.intellij.util.io.PersistentEnumeratorBase.enumerate(PersistentEnumeratorBase.java:272)
+	at com.intellij.util.io.PersistentEnumerator.enumerate(PersistentEnumerator.java:125)
+	at com.intellij.vcs.log.data.index.VcsLogPathsIndex$1.encode(VcsLogPathsIndex.java:129)
+	at git4idea.history.CompressedRecordBuilder.addPath(GitCompressedDetailsCollector.kt:35)
+	at git4idea.history.GitLogParser$PathsParser.addPath(GitLogParser.java:421)
+	at git4idea.history.GitLogParser$PathsParser.parseLine(GitLogParser.java:409)
+	at git4idea.history.GitLogParser.parseLineWithPaths(GitLogParser.java:164)
+	at git4idea.history.GitLogParser.parseLine(GitLogParser.java:147)
+	at git4idea.history.GitLogOutputSplitter.processOutputLine(GitLogOutputSplitter.java:80)
+	at git4idea.history.GitLogOutputSplitter.onLineAvailable(GitLogOutputSplitter.java:64)
+	... 24 more
+Caused by: java.lang.RuntimeException: java.lang.IndexOutOfBoundsException: Index 1901 out of bounds for length 1
+	at com.intellij.util.io.PersistentEnumeratorBase.catchCorruption(PersistentEnumeratorBase.java:646)
+	at com.intellij.util.io.PersistentEnumeratorBase.valueOf(PersistentEnumeratorBase.java:426)
+	at com.intellij.util.io.PersistentBTreeEnumerator.valueOf(PersistentBTreeEnumerator.java:733)
+	at com.intellij.util.io.PersistentEnumeratorBase.isKeyAtIndex(PersistentEnumeratorBase.java:366)
+	at com.intellij.util.io.PersistentBTreeEnumerator.enumerateImpl(PersistentBTreeEnumerator.java:556)
+	at com.intellij.util.io.PersistentEnumeratorBase.lambda$doEnumerate$0(PersistentEnumeratorBase.java:260)
+	at com.intellij.util.io.PersistentEnumeratorBase.catchCorruption(PersistentEnumeratorBase.java:621)
+	... 35 more
+Caused by: java.lang.IndexOutOfBoundsException: Index 1901 out of bounds for length 1
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:266)
+	at java.base/java.util.Objects.checkIndex(Objects.java:361)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at com.intellij.vcs.log.data.index.VcsLogPathsIndex$LightFilePathKeyDescriptor.read(VcsLogPathsIndex.java:366)
+	at com.intellij.vcs.log.data.index.VcsLogPathsIndex$LightFilePathKeyDescriptor.read(VcsLogPathsIndex.java:334)
+	at com.intellij.util.io.keyStorage.AppendableStorageBackedByResizableMappedFile.read(AppendableStorageBackedByResizableMappedFile.java:97)
+	at com.intellij.util.io.PersistentEnumeratorBase.findValueFor(PersistentEnumeratorBase.java:438)
+	at com.intellij.util.io.PersistentEnumeratorBase.lambda$valueOf$2(PersistentEnumeratorBase.java:427)
+	at com.intellij.util.io.PersistentEnumeratorBase.catchCorruption(PersistentEnumeratorBase.java:621)
+	... 41 more
+2023-09-22 16:52:50,833 [  36689] SEVERE - #c.i.v.l.d.i.VcsLogPersistentIndex - PyCharm 2023.1.2  Build #PY-231.9011.38
+2023-09-22 16:52:50,834 [  36690] SEVERE - #c.i.v.l.d.i.VcsLogPersistentIndex - JDK: 17.0.7; VM: OpenJDK 64-Bit Server VM; Vendor: JetBrains s.r.o.
+2023-09-22 16:52:50,834 [  36690] SEVERE - #c.i.v.l.d.i.VcsLogPersistentIndex - OS: Linux

@@ -15,23 +15,30 @@ class ChatApplication:
         self.send_queue = send_queue
         self.recieve_queue = recieve_queue
         self.root = tk.Tk()
+        # self.root.attributes('-fullscreen', True)
         self.root.title("Rede mit ihr")
-        self.root.geometry("400x500")
+        self.root.geometry("1920x1080")
 
-        self.font = ("TkDefaultFont", 20)
+        self.font = ("TkDefaultFont", 50)
+
+        chat_frame = tk.Frame(self.root)
+        chat_frame.pack(fill=tk.BOTH, expand=True)
+        chat_frame.grid_rowconfigure(0, weight=9)  # This will allow chat_area to occupy most of the vertical space
+        chat_frame.grid_rowconfigure(1, weight=1)  # Space for the button
+        chat_frame.grid_columnconfigure(0, weight=1)  # Single column which will occupy the entire width
 
         # Setup chat window
-        self.chat_area = scrolledtext.ScrolledText(self.root, wrap=tk.WORD)
-        self.chat_area.pack(pady=20, padx=20)
-        self.chat_area.configure(state='disabled') 
+        self.chat_area = scrolledtext.ScrolledText(chat_frame, wrap=tk.WORD)
+        self.chat_area.grid(row=0, column=0, sticky="nsew", padx=20, pady=20)
+        self.chat_area.configure(state='disabled')
 
         # Setup tags for left and right aligned messages
         self.chat_area.tag_configure('left', justify='left', background='lightblue', lmargin2=10, font=self.font)
         self.chat_area.tag_configure('right', justify='right', background='lightgreen', rmargin=10, font=self.font)
 
         # Send button
-        send_button = tk.Button(self.root, text="Send", command=self.send_message)
-        send_button.pack(pady=20)
+        send_button = tk.Button(chat_frame, text="Senden", command=self.send_message, width=20, height=2, font=self.font)
+        send_button.grid(row=1, column=0, pady=20)
 
         self.chat_handler = ChatHandler()
         self.shown_ids: list[int] = []
