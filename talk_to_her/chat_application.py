@@ -5,6 +5,7 @@ from tkinter import scrolledtext
 import speech_recognition as sr
 
 from talk_to_her.chat_handler import ChatHandler
+from talk_to_her.talk_to_logs import logger
 
 
 class ChatApplication:
@@ -36,21 +37,33 @@ class ChatApplication:
         self.chat_area.tag_configure('left', justify='left', background='lightblue', lmargin2=10, font=self.font)
         self.chat_area.tag_configure('right', justify='right', background='lightgreen', rmargin=10, font=self.font)
 
-        # Send button
-        send_button = tk.Button(chat_frame, text="Senden", command=self.send_message, width=20, height=2, font=self.font)
-        send_button.grid(row=1, column=0, pady=20)
-
         self.chat_handler = ChatHandler()
         self.shown_ids: list[int] = []
 
-        #self.communicator = subprocess.Popen(['python', 'message_receiver.py'])
         self.root.protocol("WM_DELETE_WINDOW", self.on_close)
+
+        self.recognizer = sr.Recognizer()
+        self.root.bind("<KeyPress>", self.key_up)
 
         self.chat_area.after(1000, self.fetch_messages)
 
     def init(self):
         self.root.mainloop()
-        
+
+    def key_up(self, key):
+
+        if not key.char == ' ':
+            logger.info(f'Ignoring key: {key}')
+            return
+
+        with sr.Microphone() as source:
+            print('Speak now!')
+            audio = self.recognizer.listen(source)
+
+        print(f'Finished listening!')
+        text = self.recognizer.recognize_google(audio, language='de-DE')
+        print(text)
+        self.send_queue.put(text)
 
     def fetch_messages(self):
         self.chat_handler.update()
@@ -62,22 +75,7 @@ class ChatApplication:
         self.chat_area.after(1000, self.fetch_messages)
 
     def on_close(self):
-        #self.communicator.kill()
         self.root.destroy()
-
-    def send_message(self):
-        # Initialize recognizer
-        # r = sr.Recognizer()
-        # with sr.Microphone() as source:
-        #     print('Speak now!')
-        #     audio = r.listen(source)
-        #
-        # print(f'Finished listening!')
-        # text = r.recognize_google(audio, language='de-DE')
-        text = "Hallo, Oma"
-        print(text)
-        self.send_queue.put(text)
-
 
     def add_message_to_area(self, message):
         print(f'Adding message: {message}')

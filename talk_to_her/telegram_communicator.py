@@ -1,6 +1,7 @@
 import os
 import sys
 
+import asyncio
 from dotenv import load_dotenv
 from telegram import Update
 from telegram.ext import ApplicationBuilder, ContextTypes, MessageHandler, filters
@@ -32,7 +33,8 @@ class TelegramCommunicator:
     def init(self):
         self.job_minute = self.application.job_queue.run_repeating(self.check_for_message, interval=1, first=1)
         self.application.run_polling()
-        print("Im (not) running")
+
+
 
     async def check_for_message(self, _: ContextTypes.DEFAULT_TYPE):
 

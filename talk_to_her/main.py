@@ -5,10 +5,12 @@ from talk_to_her.chat_application import ChatApplication
 from talk_to_her.telegram_communicator import TelegramCommunicator
 
 
+import speech_recognition as sr
 def call_init(target):
     target.init()
 
 if __name__ == '__main__':
+
     message_recieve_queue = Queue()
     message_send_queue = Queue()
     telegram = TelegramCommunicator(message_recieve_queue, message_send_queue)
@@ -22,17 +24,8 @@ if __name__ == '__main__':
         if not message_recieve_queue.empty():
             msg = message_recieve_queue.get_nowait()
             print(f"received: {msg}")
-            #application.add_message_to_area(msg)
-        """
-        if not message_send_queue.empty():
-            msg = message_send_queue.get_nowait()
-            print(f"sending: {msg}")
-            #telegram.send_message(msg)
-        """
         time.sleep(1)
         if not applicationProcess.is_alive():
-            print("application ded")
+            # Killing telegram
             message_send_queue.put("||killmenow||DOIT||JUSTDOITNOW||")
-        if not telegramProcess.is_alive():
-            print("telegram ded")
-            
+
