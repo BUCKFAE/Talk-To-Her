@@ -7,16 +7,18 @@ from telegram import Update
 from telegram.ext import ApplicationBuilder, ContextTypes, MessageHandler, filters
 
 from talk_to_her.chat_handler import ChatHandler
-
+from multiprocessing import Queue
 
 class TelegramCommunicator:
     """Handles the communication with telegram"""
 
-    def __init__(self, receive_queue, send_queue):
+    def __init__(self):
         super().__init__()
-        self.receive_queue = receive_queue
-        self.send_queue = send_queue
 
+    def init(self):
+        self.receive_queue = Queue()
+        self.send_queue = Queue()
+        
         load_dotenv()
         token = os.environ['TELEGRAM_TOKEN']
 
@@ -24,16 +26,14 @@ class TelegramCommunicator:
         echo_handler = MessageHandler(filters.TEXT & (~filters.COMMAND), self.handle_incoming_message)
         self.application.add_handler(echo_handler)
 
-        self.chat_handler = ChatHandler(receive_queue)
+        self.chat_handler = ChatHandler(self.receive_queue)
 
         # Bot only listens to this one chat
         self.chat_id = os.environ.get('CHAT_ID')
         assert self.chat_id is not None, f'Did not find env var CHAT_ID. '
 
-    def init(self):
         self.job_minute = self.application.job_queue.run_repeating(self.check_for_message, interval=1, first=1)
         self.application.run_polling()
-
 
 
     async def check_for_message(self, _: ContextTypes.DEFAULT_TYPE):

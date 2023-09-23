@@ -13,7 +13,7 @@ if __name__ == '__main__':
 
     message_recieve_queue = Queue()
     message_send_queue = Queue()
-    telegram = TelegramCommunicator(message_recieve_queue, message_send_queue)
+    telegram = TelegramCommunicator()
     application = ChatApplication(message_send_queue, message_recieve_queue)
     telegramProcess = Process(target=call_init, args=(telegram,))
     applicationProcess = Process(target=call_init, args=(application,))
