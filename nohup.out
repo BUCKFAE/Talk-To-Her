@@ -1107,3 +1107,53 @@ Info  | RdCoroutineScope          | 27:DefaultDispatcher-worker-16 | RdCoroutine
 2023-09-22 22:06:08,695 [  15893]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libtorch_python
 2023-09-22 22:06:08,986 [  16184]   WARN - #c.i.u.x.Binding - no accessors for com.intellij.openapi.projectRoots.Sdk
 2023-09-22 22:06:39,848 [  47046]   WARN - #c.i.i.s.download - Shared indexes download was cancelled. Indexing has completed faster
+CompileCommand: exclude com/intellij/openapi/vfs/impl/FilePartNodeRoot.trieDescend bool exclude = true
+2023-09-23 11:48:08,947 [    614]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Visual Studio" not found PluginDescriptor(name=IDEA CORE, id=com.intellij, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/lib, version=231.9011.38, package=com.intellij.structuralsearch, isBundled=true)
+2023-09-23 11:48:08,951 [    618]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Eclipse" not found PluginDescriptor(name=IDEA CORE, id=com.intellij, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/lib, version=231.9011.38, package=com.intellij.structuralsearch, isBundled=true)
+2023-09-23 11:48:08,952 [    619]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "NetBeans 6.5" not found PluginDescriptor(name=IDEA CORE, id=com.intellij, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/lib, version=231.9011.38, package=com.intellij.structuralsearch, isBundled=true)
+2023-09-23 11:48:08,952 [    619]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Visual Studio" not found PluginDescriptor(name=IDEA CORE, id=com.intellij, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/lib, version=231.9011.38, package=com.intellij.structuralsearch, isBundled=true)
+2023-09-23 11:48:08,965 [    632]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "VSCode" not found PluginDescriptor(name=Terminal, id=org.jetbrains.plugins.terminal, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/plugins/terminal, version=231.9011.38, package=null, isBundled=true)
+2023-09-23 11:48:08,984 [    651]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Visual Studio" not found PluginDescriptor(name=HTML Tools, id=HtmlTools, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/plugins/html-tools, version=231.9011.38, package=null, isBundled=true)
+2023-09-23 11:48:09,016 [    683]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Eclipse" not found PluginDescriptor(name=GitHub, id=org.jetbrains.plugins.github, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/plugins/vcs-github, version=231.9011.38, package=org.jetbrains.plugins.github, isBundled=true)
+2023-09-23 11:48:09,028 [    695]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Eclipse" not found PluginDescriptor(name=JavaScript and TypeScript, id=JavaScript, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/plugins/javascript-impl, version=231.9011.38, package=null, isBundled=true)
+2023-09-23 11:48:09,029 [    696]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Visual Studio" not found PluginDescriptor(name=JavaScript and TypeScript, id=JavaScript, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/plugins/javascript-impl, version=231.9011.38, package=null, isBundled=true)
+2023-09-23 11:48:09,033 [    700]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Eclipse" not found PluginDescriptor(name=Space, id=com.jetbrains.space, moduleName=intellij.space.vcs, descriptorPath=intellij.space.vcs.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/plugins/space, version=231.9011.38, package=com.intellij.space.vcs, isBundled=true)
+2023-09-23 11:48:09,063 [    730]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Eclipse" not found PluginDescriptor(name=Python, id=Pythonid, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/plugins/python, version=231.9011.38, package=null, isBundled=true)
+2023-09-23 11:48:09,063 [    730]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "NetBeans 6.5" not found PluginDescriptor(name=Python, id=Pythonid, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/plugins/python, version=231.9011.38, package=null, isBundled=true)
+2023-09-23 11:48:09,065 [    732]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Visual Studio" not found PluginDescriptor(name=Python, id=Pythonid, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/plugins/python, version=231.9011.38, package=null, isBundled=true)
+2023-09-23 11:48:09,065 [    732]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Eclipse" not found PluginDescriptor(name=Python, id=Pythonid, descriptorPath=plugin.xml, path=/nix/store/41mxc5f9d91g045hmz4gvmlmdzmnsw65-pycharm-professional-2023.1.2/pycharm-professional/plugins/python, version=231.9011.38, package=null, isBundled=true)
+2023-09-23 11:48:09,549 [   1216]   WARN - #c.i.o.v.n.p.l.VfsLog - VFS Log version differs from the implementation version: log null vs implementation -43
+2023-09-23 11:48:09,832 [   1499]   WARN - #c.i.e.t.TargetBasedSdks - SDK target configuration data is absent
+2023-09-23 11:48:09,851 [   1518]   WARN - #c.i.e.t.TargetBasedSdks - SDK target configuration data is absent
+2023-09-23 11:48:09,857 [   1524]   WARN - #c.i.e.t.TargetBasedSdks - SDK target configuration data is absent
+2023-09-23 11:48:09,889 [   1556]   WARN - #c.i.e.t.TargetBasedSdks - SDK target configuration data is absent
+2023-09-23 11:48:09,896 [   1563]   WARN - #c.i.e.t.TargetBasedSdks - SDK target configuration data is absent
+2023-09-23 11:48:09,904 [   1571]   WARN - #c.j.p.PluginClassPathRuntimeCustomizer - There was more than one class loaded in Projector Plugin classloader - this is likely a bug!
+Info  | RdCoroutineScope          | 12:DefaultDispatcher-worker-1 | RdCoroutineHost overridden 
+2023-09-23 11:48:12,752 [   4419]   WARN - #c.i.i.s.p.i.BundledSharedIndexPostStartupActivity - Skipped 1 pre-built shared indexes: bundled-js-predefined-1d06a55b98c1-e95fd0b84d23-JavaScript-PY-231.9011.38
+2023-09-23 11:48:16,889 [   8556]   WARN - #c.i.u.x.Binding - no accessors for com.intellij.openapi.projectRoots.Sdk
+2023-09-23 11:48:18,694 [  10361]   WARN - #c.j.p.s.s.PySkeletonRefresher - Some skeletons failed to generate
+2023-09-23 11:48:18,694 [  10361]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libc10
+2023-09-23 11:48:18,694 [  10361]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libc10_cuda
+2023-09-23 11:48:18,694 [  10361]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libcaffe2_nvrtc
+2023-09-23 11:48:18,694 [  10361]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libnvfuser_codegen
+2023-09-23 11:48:18,695 [  10362]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libshm
+2023-09-23 11:48:18,695 [  10362]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libtorch
+2023-09-23 11:48:18,695 [  10362]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libtorch_cpu
+2023-09-23 11:48:18,695 [  10362]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libtorch_cuda
+2023-09-23 11:48:18,695 [  10362]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libtorch_cuda_linalg
+2023-09-23 11:48:18,695 [  10362]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libtorch_global_deps
+2023-09-23 11:48:18,695 [  10362]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libtorch_python
+2023-09-23 11:48:20,578 [  12245]   WARN - #c.j.p.s.s.PySkeletonRefresher - Some skeletons failed to generate
+2023-09-23 11:48:20,578 [  12245]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libc10
+2023-09-23 11:48:20,578 [  12245]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libc10_cuda
+2023-09-23 11:48:20,578 [  12245]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libcaffe2_nvrtc
+2023-09-23 11:48:20,578 [  12245]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libnvfuser_codegen
+2023-09-23 11:48:20,578 [  12245]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libshm
+2023-09-23 11:48:20,578 [  12245]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libtorch
+2023-09-23 11:48:20,578 [  12245]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libtorch_cpu
+2023-09-23 11:48:20,578 [  12245]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libtorch_cuda
+2023-09-23 11:48:20,579 [  12246]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libtorch_cuda_linalg
+2023-09-23 11:48:20,579 [  12246]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libtorch_global_deps
+2023-09-23 11:48:20,579 [  12246]   WARN - #c.j.p.s.s.PySkeletonRefresher - torch.lib.libtorch_python
+2023-09-23 11:48:32,492 [  24159]   WARN - #c.i.i.s.download - Shared indexes download was cancelled. Indexing has completed faster

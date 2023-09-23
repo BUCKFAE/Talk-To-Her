@@ -25,7 +25,6 @@ class ChatApplication:
         chat_frame = tk.Frame(self.root)
         chat_frame.pack(fill=tk.BOTH, expand=True)
         chat_frame.grid_rowconfigure(0, weight=9)  # This will allow chat_area to occupy most of the vertical space
-        chat_frame.grid_rowconfigure(1, weight=1)  # Space for the button
         chat_frame.grid_columnconfigure(0, weight=1)  # Single column which will occupy the entire width
 
         # Setup chat window
@@ -52,6 +51,9 @@ class ChatApplication:
 
     def key_up(self, key):
 
+        # Prevent multiple key-presses
+        self.root.unbind("<KeyPress>")
+
         if not key.char == ' ':
             logger.info(f'Ignoring key: {key}')
             return
@@ -64,6 +66,9 @@ class ChatApplication:
         text = self.recognizer.recognize_google(audio, language='de-DE')
         print(text)
         self.send_queue.put(text)
+
+        # Listen for keys again
+        self.root.bind("<KeyPress>", self.key_up)
 
     def fetch_messages(self):
         self.chat_handler.update()
@@ -97,9 +102,4 @@ class ChatApplication:
 
 
 if __name__ == '__main__':
-    # logging.basicConfig(
-    #     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    #     level=logging.INFO
-    # )
-
     ChatApplication()

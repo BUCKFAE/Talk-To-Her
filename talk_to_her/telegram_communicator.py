@@ -69,7 +69,7 @@ class TelegramCommunicator:
         self.chat_handler.add_message(update.message.id, 'Oma', update.message.text)
 
 
-        await context.bot.send_message(chat_id=update.effective_chat.id, text='Got it!')
+        await context.bot.send_message(chat_id=update.effective_chat.id, text='[OPA] hat deine Nachricht erhalten!!')
 
 if __name__ == '__main__':
     TelegramCommunicator()
