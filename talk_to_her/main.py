@@ -1,11 +1,20 @@
 import multiprocessing
 import time
+
 from multiprocessing import Process
 
 from talk_to_her.chat_application import ChatApplication
 from talk_to_her.telegram_communicator import TelegramCommunicator
 
+
+def start_application_loop(application):
+    application.start_loop()
+
+def start_telegram_loop(telegram):
+    telegram.start_loop()
+
 if __name__ == '__main__':
+    multiprocessing.set_start_method('spawn')
 
     # Allows communication between telegram and application
     conn_send, conn_rec = multiprocessing.Pipe()
@@ -14,15 +23,16 @@ if __name__ == '__main__':
     telegram = TelegramCommunicator()
 
     application.conn_send = conn_send
-    telegram.conn_rec =conn_rec
+    telegram.conn_rec = conn_rec
 
-    applicationProcess = Process(target=application.start_loop)
-    telegramProcess = Process(target=telegram.start_loop)
+    applicationProcess = multiprocessing.Process(target=start_application_loop, args=(application,))
+    telegramProcess = multiprocessing.Process(target=start_telegram_loop, args=(telegram,))
 
-    print(f'[MAIN] Starting chat application')
-    applicationProcess.start()
+
     print(f'[MAIN]Starting telegram communicator')
     telegramProcess.start()
+    print(f'[MAIN] Starting chat application')
+    applicationProcess.start()
 
     while applicationProcess.is_alive() or telegramProcess.is_alive():
         time.sleep(1)

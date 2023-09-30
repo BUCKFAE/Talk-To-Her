@@ -10,11 +10,11 @@ from telegram.ext import ApplicationBuilder, ContextTypes, MessageHandler, filte
 
 from talk_to_her.chat_handler import ChatHandler
 
-
 class TelegramCommunicator:
     """Handles the communication with telegram"""
 
-    def __init__(self):
+
+    def init(self):
         load_dotenv()
         token = os.environ['TELEGRAM_TOKEN']
 
@@ -34,6 +34,7 @@ class TelegramCommunicator:
         self.job_minute = self.application.job_queue.run_repeating(self.check_for_message, interval=2, first=1)
 
     def start_loop(self):
+        self.init()
         print(f'[TELEGRAM]: Start polling')
         self.application.run_polling()
 

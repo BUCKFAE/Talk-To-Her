@@ -12,7 +12,7 @@ from talk_to_her.chat_handler import ChatHandler
 
 class ChatApplication:
 
-    def __init__(self):
+    def init(self):
 
         # Setup Window
         self.root = tk.Tk()
@@ -49,6 +49,7 @@ class ChatApplication:
         self.chat_area.after(1000, self.fetch_messages)
 
     def start_loop(self):
+        self.init()
         print(f'[CHAT-APP]: Start main loop')
         self.root.mainloop()
 
