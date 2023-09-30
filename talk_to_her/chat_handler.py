@@ -2,16 +2,15 @@
 import json
 import logging
 import os.path
-import threading
 from collections import namedtuple
 
-Message = namedtuple("Message", "id sender message")
 
 
 class ChatHandler:
     CHAT_FILE: str = 'chat_history.json'
 
     def __init__(self):
+        Message = namedtuple("Message", "id sender message")
 
         print(f'Created new chat handler!')
         # Loading chat history
@@ -23,6 +22,7 @@ class ChatHandler:
             self.chat: list[Message] = []
 
     def add_message_to_log(self, message_id: int, sender: str, message: str):
+        Message = namedtuple("Message", "id sender message")
         """Add a message that was successfully sent by the telegramm_communicator to the chat history"""
         msg = Message(message_id, sender, message)
         self.chat += [msg]
@@ -32,6 +32,7 @@ class ChatHandler:
 
     def update(self):
         """Ensures self.chat is on the latest state"""
+        Message = namedtuple("Message", "id sender message")
 
         if not os.path.isfile(self.CHAT_FILE):
             return

@@ -8,7 +8,6 @@ from tkinter import scrolledtext
 import speech_recognition as sr
 
 from talk_to_her.chat_handler import ChatHandler
-from talk_to_her.talk_to_logs import logger
 
 
 class ChatApplication:
@@ -59,7 +58,7 @@ class ChatApplication:
         self.root.unbind("<KeyPress>")
 
         if not key.char == ' ':
-            logger.info(f'Ignoring key: {key}')
+            print(f'Ignoring key: {key}')
             self.root.bind("<KeyPress>", self.key_up)
             return
         text = 'SAMPLE TEXT'
