@@ -1,14 +1,13 @@
 from __future__ import annotations
 
 import os
-import sys
-from multiprocessing.connection import Connection
 
 from dotenv import load_dotenv
 from telegram import Update
 from telegram.ext import ApplicationBuilder, ContextTypes, MessageHandler, filters
 
 from talk_to_her.chat_handler import ChatHandler
+
 
 class TelegramCommunicator:
     """Handles the communication with telegram"""
@@ -64,9 +63,8 @@ class TelegramCommunicator:
             print(self.chat_id)
         self.chat_handler.add_message_to_log(update.message.id, 'Oma', update.message.text)
 
-
         await context.bot.send_message(chat_id=update.effective_chat.id, text='[OPA] hat deine Nachricht erhalten!!')
+
 
 if __name__ == '__main__':
     TelegramCommunicator()
-

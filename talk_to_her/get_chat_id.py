@@ -5,7 +5,6 @@ from telegram import Update
 from telegram.ext import ApplicationBuilder, ContextTypes, MessageHandler, filters
 
 
-
 def main():
     load_dotenv()
     token = os.environ['TELEGRAM_TOKEN']
@@ -19,7 +18,6 @@ def main():
 
 async def _handle_incoming_message(update: Update, _: ContextTypes.DEFAULT_TYPE):
     print(f'Got message from {update.message.from_user.name} with id {update.message.from_user.id}')
-
 
 
 if __name__ == '__main__':

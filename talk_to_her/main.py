@@ -1,8 +1,6 @@
 import multiprocessing
 import time
 
-from multiprocessing import Process
-
 from talk_to_her.chat_application import ChatApplication
 from talk_to_her.telegram_communicator import TelegramCommunicator
 
@@ -10,8 +8,10 @@ from talk_to_her.telegram_communicator import TelegramCommunicator
 def start_application_loop(application):
     application.start_loop()
 
+
 def start_telegram_loop(telegram):
     telegram.start_loop()
+
 
 if __name__ == '__main__':
     multiprocessing.set_start_method('spawn')
@@ -27,7 +27,6 @@ if __name__ == '__main__':
 
     applicationProcess = multiprocessing.Process(target=start_application_loop, args=(application,))
     telegramProcess = multiprocessing.Process(target=start_telegram_loop, args=(telegram,))
-
 
     print(f'[MAIN]Starting telegram communicator')
     telegramProcess.start()

@@ -4,21 +4,19 @@ import tkinter as tk
 from multiprocessing.connection import Connection
 from tkinter import scrolledtext
 
-
 import speech_recognition as sr
 
 from talk_to_her.chat_handler import ChatHandler
 
 
 class ChatApplication:
-
     conn_send: Connection | None = None
 
     def init(self):
 
         # Setup Window
         self.root = tk.Tk()
-        # self.root.attributes('-fullscreen', True)
+        self.root.attributes('-fullscreen', True)
         self.root.title("Rede mit ihr")
         self.root.geometry("1920x1080")
 
@@ -63,7 +61,6 @@ class ChatApplication:
             print(f'Ignoring key: {key}')
             self.root.bind("<KeyPress>", self.key_up)
             return
-        # text = 'SAMPLE TEXT'
 
         with sr.Microphone() as source:
             print('Speak now!')
@@ -104,9 +101,6 @@ class ChatApplication:
             self.chat_area.see(tk.END)
 
             self.shown_ids.append(message.id)
-
-
-
 
 
 if __name__ == '__main__':
