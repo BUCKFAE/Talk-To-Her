@@ -17,13 +17,17 @@ if __name__ == '__main__':
     multiprocessing.set_start_method('spawn')
 
     # Allows communication between telegram and application
-    conn_send, conn_rec = multiprocessing.Pipe()
+    conn_send_a, conn_rec_t = multiprocessing.Pipe()
+    conn_send_t, conn_rec_a = multiprocessing.Pipe()
 
     application = ChatApplication()
     telegram = TelegramCommunicator()
 
-    application.conn_send = conn_send
-    telegram.conn_rec = conn_rec
+    application.conn_send = conn_send_a
+    application.conn_rec = conn_rec_a
+
+    telegram.conn_rec = conn_rec_t
+    telegram.conn_send = conn_send_t
 
     applicationProcess = multiprocessing.Process(target=start_application_loop, args=(application,))
     telegramProcess = multiprocessing.Process(target=start_telegram_loop, args=(telegram,))

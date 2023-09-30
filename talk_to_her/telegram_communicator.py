@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+from multiprocessing.connection import Connection
 
 from dotenv import load_dotenv
 from telegram import Update
@@ -11,6 +12,9 @@ from talk_to_her.chat_handler import ChatHandler
 
 class TelegramCommunicator:
     """Handles the communication with telegram"""
+
+    conn_send: Connection | None = None
+    conn_rec: Connection | None = None
 
     def init(self):
         load_dotenv()
@@ -28,7 +32,7 @@ class TelegramCommunicator:
         assert self.chat_id is not None, f'Did not find env var CHAT_ID. '
 
         # Check if there is a new message once every minute
-        self.job_minute = self.application.job_queue.run_repeating(self.check_for_message, interval=2, first=1)
+        self.job_minute = self.application.job_queue.run_repeating(self.check_for_message, interval=1, first=1)
 
     def start_loop(self):
         self.init()
@@ -52,6 +56,7 @@ class TelegramCommunicator:
         print("Sending Now")
         send_msg = await self.application.bot.send_message(chat_id=chat_id, text=msg)
         self.chat_handler.add_message_to_log(send_msg.id, 'Opa', send_msg.text)
+        self.conn_send.send((send_msg.id, 'Opa', send_msg.text))
 
     async def handle_incoming_message(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
         if update.effective_user.name not in ['@buckfae']:
@@ -62,6 +67,7 @@ class TelegramCommunicator:
             self.chat_id = update.effective_chat.id
             print(self.chat_id)
         self.chat_handler.add_message_to_log(update.message.id, 'Oma', update.message.text)
+        self.conn_send.send((update.message, 'Oma', update.message.text))
 
         await context.bot.send_message(chat_id=update.effective_chat.id, text='[OPA] hat deine Nachricht erhalten!!')
 
