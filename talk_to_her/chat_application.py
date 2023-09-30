@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import tkinter as tk
 from multiprocessing.connection import Connection
 from tkinter import scrolledtext
@@ -11,7 +13,7 @@ from talk_to_her.talk_to_logs import logger
 
 class ChatApplication:
 
-    def __init__(self, conn_send: Connection):
+    def __init__(self):
 
         # Setup Window
         self.root = tk.Tk()
@@ -36,7 +38,7 @@ class ChatApplication:
         self.chat_area.tag_configure('left', justify='left', background='lightblue', lmargin2=10, font=self.font)
         self.chat_area.tag_configure('right', justify='right', background='lightgreen', rmargin=10, font=self.font)
 
-        self.conn_send = conn_send
+        self.conn_send: Connection | None = None
         self.chat_handler = ChatHandler()
         self.shown_ids: list[int] = []
 

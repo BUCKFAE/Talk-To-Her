@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import os
 import sys
 from multiprocessing.connection import Connection
@@ -12,7 +14,7 @@ from talk_to_her.chat_handler import ChatHandler
 class TelegramCommunicator:
     """Handles the communication with telegram"""
 
-    def __init__(self, conn_rec: Connection):
+    def __init__(self):
         load_dotenv()
         token = os.environ['TELEGRAM_TOKEN']
 
@@ -21,7 +23,7 @@ class TelegramCommunicator:
         echo_handler = MessageHandler(filters.TEXT & (~filters.COMMAND), self.handle_incoming_message)
         self.application.add_handler(echo_handler)
 
-        self.conn_rec =conn_rec
+        self.conn_rec: Connection | None = None
         self.chat_handler = ChatHandler()
 
         # Bot only listens to this one chat

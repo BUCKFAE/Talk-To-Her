@@ -10,8 +10,12 @@ if __name__ == '__main__':
     # Allows communication between telegram and application
     conn_send, conn_rec = multiprocessing.Pipe()
 
-    application = ChatApplication(conn_send)
-    telegram = TelegramCommunicator(conn_rec)
+    application = ChatApplication()
+    telegram = TelegramCommunicator()
+
+    application.conn_send = conn_send
+    telegram.conn_rec =conn_rec
+
     applicationProcess = Process(target=application.start_loop)
     telegramProcess = Process(target=telegram.start_loop)
 
