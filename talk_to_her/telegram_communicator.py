@@ -12,7 +12,7 @@ from talk_to_her.chat_handler import ChatHandler
 
 class TelegramCommunicator:
     """Handles the communication with telegram"""
-
+    conn_rec: Connection | None = None
 
     def init(self):
         load_dotenv()
@@ -23,7 +23,6 @@ class TelegramCommunicator:
         echo_handler = MessageHandler(filters.TEXT & (~filters.COMMAND), self.handle_incoming_message)
         self.application.add_handler(echo_handler)
 
-        self.conn_rec: Connection | None = None
         self.chat_handler = ChatHandler()
 
         # Bot only listens to this one chat

@@ -12,6 +12,8 @@ from talk_to_her.chat_handler import ChatHandler
 
 class ChatApplication:
 
+    conn_send: Connection | None = None
+
     def init(self):
 
         # Setup Window
@@ -37,7 +39,6 @@ class ChatApplication:
         self.chat_area.tag_configure('left', justify='left', background='lightblue', lmargin2=10, font=self.font)
         self.chat_area.tag_configure('right', justify='right', background='lightgreen', rmargin=10, font=self.font)
 
-        self.conn_send: Connection | None = None
         self.chat_handler = ChatHandler()
         self.shown_ids: list[int] = []
 
