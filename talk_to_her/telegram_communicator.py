@@ -12,7 +12,6 @@ from talk_to_her.chat_handler import ChatHandler
 
 class TelegramCommunicator:
     """Handles the communication with telegram"""
-    conn_rec: Connection | None = None
 
     def init(self):
         load_dotenv()

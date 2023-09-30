@@ -63,14 +63,14 @@ class ChatApplication:
             print(f'Ignoring key: {key}')
             self.root.bind("<KeyPress>", self.key_up)
             return
-        text = 'SAMPLE TEXT'
+        # text = 'SAMPLE TEXT'
 
-        # with sr.Microphone() as source:
-        #     print('Speak now!')
-        #     audio = self.recognizer.listen(source)
-        #
-        # print(f'Finished listening!')
-        # text = self.recognizer.recognize_google(audio, language='de-DE')
+        with sr.Microphone() as source:
+            print('Speak now!')
+            audio = self.recognizer.listen(source)
+
+        print(f'Finished listening!')
+        text = self.recognizer.recognize_google(audio, language='de-DE')
         print(f'[APP]: Text: {text}')
 
         self.conn_send.send(text)
