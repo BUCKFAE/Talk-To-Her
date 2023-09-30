@@ -16,7 +16,7 @@ class ChatApplication:
 
         # Setup Window
         self.root = tk.Tk()
-        self.root.attributes('-fullscreen', True)
+        # self.root.attributes('-fullscreen', True)
         self.root.title("Rede mit ihr")
         self.root.geometry("1920x1080")
 
