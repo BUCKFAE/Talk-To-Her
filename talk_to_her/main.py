@@ -2,6 +2,7 @@ import multiprocessing
 import time
 
 from talk_to_her.chat_application import ChatApplication
+from talk_to_her.her_logger import HerLogger
 from talk_to_her.telegram_communicator import TelegramCommunicator
 
 
@@ -15,6 +16,8 @@ def start_telegram_loop(telegram):
 
 if __name__ == '__main__':
     multiprocessing.set_start_method('spawn')
+
+    logger = HerLogger().logger
 
     # Allows communication between telegram and application
     conn_send_a, conn_rec_t = multiprocessing.Pipe()
@@ -39,8 +42,7 @@ if __name__ == '__main__':
 
     while applicationProcess.is_alive() or telegramProcess.is_alive():
         time.sleep(1)
-        # TODO: Kill processes
         if not applicationProcess.is_alive():
-            print(f'[MAIN]: Application has stopped')
-            print(f'[MAIN]: Shutting down telegram')
+            logger.info(f'[MAIN]: Application has stopped')
+            logger.info(f'[MAIN]: Shutting down telegram')
             telegramProcess.terminate()

@@ -1,13 +1,15 @@
 from __future__ import annotations
 
 import os
+from logging import Logger
 from multiprocessing.connection import Connection
 
 from dotenv import load_dotenv
 from telegram import Update
-from telegram.ext import ApplicationBuilder, ContextTypes, MessageHandler, filters
+from telegram.ext import ApplicationBuilder, ContextTypes, MessageHandler, filters, Job, Application
 
 from talk_to_her.chat_handler import ChatHandler
+from talk_to_her.her_logger import HerLogger
 
 
 class TelegramCommunicator:
@@ -16,59 +18,63 @@ class TelegramCommunicator:
     conn_send: Connection | None = None
     conn_rec: Connection | None = None
 
-    def init(self):
+    # Will be set in the setup method
+    chat_id: int
+    check_new_messages_job: Job
+    telegram: Application
+
+    # Used for logging
+    prefix = '[TELEGRAM] '
+    logger: Logger
+
+    def setup(self):
+        self.logger = HerLogger().logger
+        self.logger.info(self.prefix + 'Setup ...')
+
+        # Load stuff from env vars
         load_dotenv()
-        token = os.environ['TELEGRAM_TOKEN']
+        token = os.environ.get('TELEGRAM_TOKEN')
+        assert token is not None, f'Did not find env var TELEGRAM_TOKEN'
+        chat_env = os.environ.get('CHAT_ID')  # Bot only listens to this chat
+        assert chat_env is not None, f'Did not find env var CHAT_ID'
+        assert chat_env.isnumeric(), f'CHAT_ID is not numeric!'
+        self.chat_id = int(chat_env)
 
         # Setup connection to telegram
-        self.application = ApplicationBuilder().token(token).build()
+        self.telegram = ApplicationBuilder().token(token).build()
         echo_handler = MessageHandler(filters.TEXT & (~filters.COMMAND), self.handle_incoming_message)
-        self.application.add_handler(echo_handler)
-
-        self.chat_handler = ChatHandler()
-
-        # Bot only listens to this one chat
-        self.chat_id = os.environ.get('CHAT_ID')
-        assert self.chat_id is not None, f'Did not find env var CHAT_ID. '
+        self.telegram.add_handler(echo_handler)
 
         # Check if there is a new message once every minute
-        self.job_minute = self.application.job_queue.run_repeating(self.check_for_message, interval=1, first=1)
+        self.check_new_messages_job = self.telegram.job_queue.run_repeating(self.send_outgoing_messages, interval=1, first=1)
 
     def start_loop(self):
-        self.init()
-        print(f'[TELEGRAM]: Start polling')
-        self.application.run_polling()
+        self.setup()
+        self.logger.info(self.prefix + 'Start polling')
+        self.telegram.run_polling()
 
-    async def check_for_message(self, _: ContextTypes.DEFAULT_TYPE):
-        """Checks if there are pending messages in the chat_handler, sends all pending messages"""
-
-        if self.conn_rec.poll():
+    async def send_outgoing_messages(self, _: ContextTypes.DEFAULT_TYPE):
+        while self.conn_rec.poll():
             msg = self.conn_rec.recv()
-            print(f'[TELEGRAM]: Got message: {msg}')
+            self.logger.info(self.prefix + f'Got message: {msg}')
             self.send_message(msg)
 
-    def send_message(self, msg: str):
-        print(f"trying to send to {self.chat_id}")
-        if self.chat_id:
-            self.application.create_task(self._send_message(self.chat_id, msg))
-
     async def _send_message(self, chat_id: int, msg: str):
-        print("Sending Now")
-        send_msg = await self.application.bot.send_message(chat_id=chat_id, text=msg)
-        self.chat_handler.add_message_to_log(send_msg.id, 'Opa', send_msg.text)
+        send_msg = await self.telegram.bot.send_message(chat_id=chat_id, text=msg)
         self.conn_send.send((send_msg.id, 'Opa', send_msg.text))
 
-    async def handle_incoming_message(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
-        if update.effective_user.name not in ['@buckfae']:
-            await context.bot.send_message(chat_id=update.effective_chat.id, text='Sorry, not whitelisted!')
-            return
-        print(f"{self.chat_id} vs {update.effective_chat.id} {not self.chat_id}")
-        if not self.chat_id:
-            self.chat_id = update.effective_chat.id
-            print(self.chat_id)
-        self.chat_handler.add_message_to_log(update.message.id, 'Oma', update.message.text)
-        self.conn_send.send((update.message, 'Oma', update.message.text))
+    def send_message(self, msg: str):
+        self.logger.info(self.prefix + f'Sending message to chat {self.chat_id}')
+        self.logger.info(self.prefix + f'Message: {msg}')
+        if self.chat_id:
+            self.telegram.create_task(self._send_message(self.chat_id, msg))
 
+    async def handle_incoming_message(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
+        if not update.effective_user.id == self.chat_id:
+            await context.bot.send_message(chat_id=update.effective_chat.id, text='Sorry, not whitelisted!')
+            self.logger.info(self.prefix + f'Got message from no-whitelisted user: {update.effective_user.id}')
+            return
+        self.conn_send.send((update.message.id, 'Oma', update.message.text))
         await context.bot.send_message(chat_id=update.effective_chat.id, text='[OPA] hat deine Nachricht erhalten!!')
 
 

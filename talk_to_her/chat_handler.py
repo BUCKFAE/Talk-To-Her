@@ -1,23 +1,26 @@
 """Keeps Track of messages sent"""
 import json
-import logging
 import os.path
 from collections import namedtuple
+
+from talk_to_her.her_logger import HerLogger
 
 Message = namedtuple("Message", "id sender message")
 
 
 class ChatHandler:
     CHAT_FILE: str = 'chat_history.json'
+    prefix = '[CHAT-HANDLER] '
 
     def __init__(self):
+        self.logger = HerLogger().logger
 
-        print(f'[CHAT-HANDLER] Created new chat handler!')
+        self.logger.info(self.prefix + 'Created new chat handler!')
         # Loading chat history
         if os.path.isfile(self.CHAT_FILE):
-            logging.info(f'Loading existing chat from file: {self.CHAT_FILE}')
+            self.logger.info(self.prefix + f'Loading existing chat from file: {self.CHAT_FILE}')
             self.update()
-            logging.info(f'Previous messages: {self.chat}')
+            self.logger.info(self.prefix + f'Finished loading {len(self.chat)} previous messages')
         else:
             self.chat: list[Message] = []
 
@@ -26,7 +29,7 @@ class ChatHandler:
         msg = Message(message_id, sender, message)
         self.chat += [msg]
         with open(self.CHAT_FILE, 'w') as f:
-            json.dump([m._asdict() for m in self.chat], f)
+            json.dump([{'id': m.id, 'sender': m.sender, 'message': m.message} for m in self.chat], f)
         self.update()
 
     def update(self):
