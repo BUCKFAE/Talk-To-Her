@@ -35,9 +35,7 @@ if __name__ == '__main__':
     applicationProcess = multiprocessing.Process(target=start_application_loop, args=(application,))
     telegramProcess = multiprocessing.Process(target=start_telegram_loop, args=(telegram,))
 
-    print(f'[MAIN]Starting telegram communicator')
     telegramProcess.start()
-    print(f'[MAIN] Starting chat application')
     applicationProcess.start()
 
     while applicationProcess.is_alive() or telegramProcess.is_alive():
