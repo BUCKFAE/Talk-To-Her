@@ -96,7 +96,9 @@ class ChatApplication:
                             frames_per_buffer=self.CHUNK)
         frames = []
         while True:
+            print('Listening')
             if not keyboard.is_pressed("space"):
+                print(f'Stop listen')
                 break
 
             data = stream.read(self.CHUNK)
