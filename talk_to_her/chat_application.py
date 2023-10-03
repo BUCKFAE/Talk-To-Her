@@ -82,9 +82,6 @@ class ChatApplication:
         # Listen to user speakV
         with sr.Microphone() as source:
             self.logger.info(self.prefix + 'Speak now!')
-            # audio = self.recognizer.listen(source)
-            while not keyboard.is_pressed('space'):
-                pass
             audio = self.recognizer.listen(source)
 
         self.logger.info(self.prefix + 'Finished listening!')
