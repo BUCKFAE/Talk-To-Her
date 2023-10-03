@@ -96,7 +96,7 @@ class ChatApplication:
                             frames_per_buffer=self.CHUNK)
         frames = []
         while True:
-            if keyboard.is_pressed("space"):
+            if not keyboard.is_pressed("space"):
                 break
 
             try:
@@ -126,7 +126,7 @@ class ChatApplication:
         #     audio = self.recognizer.listen(source)
 
         self.logger.info(self.prefix + 'Finished listening!')
-        text = self.recognizer.recognize_google(audio, language='de-DE')
+        text = self.recognizer.recognize_google(self.OUTPUT_FILENAME, language='de-DE')
         # text = 'Sample text'
         self.logger.info(self.prefix + f'Text: {text}')
 
