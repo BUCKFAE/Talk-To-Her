@@ -1,12 +1,9 @@
 from __future__ import annotations
 
 import tkinter as tk
-import wave
 from logging import Logger
 from multiprocessing.connection import Connection
 from tkinter import scrolledtext
-import keyboard
-import pyaudio
 
 import speech_recognition as sr
 
@@ -29,14 +26,6 @@ class ChatApplication:
 
     chat_handler: ChatHandler
     recognizer = sr.Recognizer
-
-    # Audio
-    FORMAT = pyaudio.paInt16
-    CHANNELS = 1
-    RATE = 44100
-    CHUNK = 1024
-    RECORD_SECONDS = 10  # Adjust the recording duration as needed
-    OUTPUT_FILENAME = "output.wav"
 
     def init(self):
 
@@ -90,42 +79,16 @@ class ChatApplication:
             self.root.bind("<KeyPress>", self.key_up)
             return
 
-        audio = pyaudio.PyAudio()
-        stream = audio.open(format=self.FORMAT, channels=self.CHANNELS,
-                            rate=self.RATE, input=True,
-                            frames_per_buffer=self.CHUNK)
-        frames = []
-        while True:
-            print('Listening')
-            if not keyboard.is_pressed("space"):
-                print(f'Stop listen')
-                break
-
-            data = stream.read(self.CHUNK)
-            frames.append(data)
-
-        print("Recording stopped.")
-
-        stream.stop_stream()
-        stream.close()
-        audio.terminate()
-
-        with wave.open(self.OUTPUT_FILENAME, 'wb') as wf:
-            wf.setnchannels(self.CHANNELS)
-            wf.setsampwidth(audio.get_sample_size(self.FORMAT))
-            wf.setframerate(self.RATE)
-            wf.writeframes(b''.join(frames))
-
-        # # Listen to user speakV
-        # with sr.Microphone() as source:
-        #     self.logger.info(self.prefix + 'Speak now!')
-        #     # audio = self.recognizer.listen(source)
-        #     while not keyboard.is_pressed('space'):
-        #         pass
-        #     audio = self.recognizer.listen(source)
+        # Listen to user speakV
+        with sr.Microphone() as source:
+            self.logger.info(self.prefix + 'Speak now!')
+            # audio = self.recognizer.listen(source)
+            while not keyboard.is_pressed('space'):
+                pass
+            audio = self.recognizer.listen(source)
 
         self.logger.info(self.prefix + 'Finished listening!')
-        text = self.recognizer.recognize_google(self.OUTPUT_FILENAME, language='de-DE')
+        text = self.recognizer.recognize_google(audio, language='de-DE')
         # text = 'Sample text'
         self.logger.info(self.prefix + f'Text: {text}')
 
