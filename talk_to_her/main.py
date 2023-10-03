@@ -1,4 +1,5 @@
 import multiprocessing
+import os
 import time
 
 from talk_to_her.chat_application import ChatApplication
@@ -18,6 +19,9 @@ if __name__ == '__main__':
     multiprocessing.set_start_method('spawn')
 
     logger = HerLogger().logger
+
+    # https://stackoverflow.com/a/27215461
+    os.system('xset r off')
 
     # Allows communication between telegram and application
     conn_send_a, conn_rec_t = multiprocessing.Pipe()

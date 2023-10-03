@@ -7,6 +7,7 @@ from tkinter import scrolledtext
 
 import speech_recognition as sr
 
+from talk_to_her.audio_recorder import Recorder, RecordingFile
 from talk_to_her.chat_handler import ChatHandler
 from talk_to_her.her_logger import HerLogger
 
@@ -26,6 +27,9 @@ class ChatApplication:
 
     chat_handler: ChatHandler
     recognizer = sr.Recognizer
+
+    recorder: Recorder
+    rec_file: RecordingFile
 
     def init(self):
 
@@ -59,6 +63,8 @@ class ChatApplication:
         for previous_message in self.chat_handler.chat:
             self.add_message_to_area(*previous_message)
 
+        self.recorder = Recorder()
+
         self.recognizer = sr.Recognizer()
         self.root.bind("<KeyPress>", self.key_up)
         self.chat_area.after(1000, self.fetch_messages)
@@ -67,6 +73,28 @@ class ChatApplication:
         self.init()
         self.logger.info(self.prefix + 'Start main loop')
         self.root.mainloop()
+
+    def end_rec(self, _):
+
+        self.root.unbind("<KeyRelease>")
+
+        # Finished recording
+        self.rec_file.stop_recording()
+        self.rec_file.close()
+        self.logger.info(self.prefix + 'Stopped recording!')
+
+        # Read audio again
+        with sr.AudioFile("audio.wav") as source:
+            audio = self.recognizer.record(source)
+
+        # Translate audio
+        text = self.recognizer.recognize_google(audio, language='de-DE')
+        self.logger.info(self.prefix + f'Text: {text}')
+        self.conn_send.send(text)
+
+        # Listen for spacebar again
+        self.root.bind("<KeyPress>", self.key_up)
+
 
     def key_up(self, key):
 
@@ -79,21 +107,10 @@ class ChatApplication:
             self.root.bind("<KeyPress>", self.key_up)
             return
 
-        # Listen to user speakV
-        with sr.Microphone() as source:
-            self.logger.info(self.prefix + 'Speak now!')
-            audio = self.recognizer.listen(source)
+        self.rec_file = self.recorder.open('audio.wav', 'wb')
+        self.rec_file.start_recording()
+        self.root.bind("<KeyRelease>", self.end_rec)
 
-        self.logger.info(self.prefix + 'Finished listening!')
-        text = self.recognizer.recognize_google(audio, language='de-DE')
-        # text = 'Sample text'
-        self.logger.info(self.prefix + f'Text: {text}')
-
-        # Schedule message to be sent via telegram
-        self.conn_send.send(text)
-
-        # Listen for keys again
-        self.root.bind("<KeyPress>", self.key_up)
 
     def fetch_messages(self):
         # CHeck if there are new messages from telegram

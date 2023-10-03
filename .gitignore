@@ -1,6 +1,7 @@
 # Project stuff
 .env
 nohup.out
+audio.wav
 chat_history.json
 
 ### Linux template
