@@ -102,8 +102,6 @@ class ChatApplication:
             try:
                 data = stream.read(self.CHUNK)
                 frames.append(data)
-            except KeyboardInterrupt:
-                break
 
         print("Recording stopped.")
 
