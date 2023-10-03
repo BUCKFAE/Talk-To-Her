@@ -99,9 +99,8 @@ class ChatApplication:
             if not keyboard.is_pressed("space"):
                 break
 
-            try:
-                data = stream.read(self.CHUNK)
-                frames.append(data)
+            data = stream.read(self.CHUNK)
+            frames.append(data)
 
         print("Recording stopped.")
 
