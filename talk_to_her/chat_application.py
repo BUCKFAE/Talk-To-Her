@@ -4,6 +4,7 @@ import tkinter as tk
 from logging import Logger
 from multiprocessing.connection import Connection
 from tkinter import scrolledtext
+import keyboard
 
 import speech_recognition as sr
 
@@ -80,13 +81,16 @@ class ChatApplication:
             return
 
         # Listen to user speak
-        # with sr.Microphone() as source:
-        #     self.logger.info(self.prefix + 'Speak now!')
-        #     audio = self.recognizer.listen(source)
+        with sr.Microphone() as source:
+            self.logger.info(self.prefix + 'Speak now!')
+            # audio = self.recognizer.listen(source)
+            while not keyboard.is_pressed('space'):
+                pass
+            audio = self.recognizer.listen(source)
 
         self.logger.info(self.prefix + 'Finished listening!')
-        # text = self.recognizer.recognize_google(audio, language='de-DE')
-        text = 'Sample text'
+        text = self.recognizer.recognize_google(audio, language='de-DE')
+        # text = 'Sample text'
         self.logger.info(self.prefix + f'Text: {text}')
 
         # Schedule message to be sent via telegram
